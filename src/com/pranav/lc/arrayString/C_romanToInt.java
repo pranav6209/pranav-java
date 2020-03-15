@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc;
+package com.pranav.lc.arrayString;
 
 import java.util.HashMap;
 import java.util.Map;

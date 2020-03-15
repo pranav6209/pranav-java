@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc;
+package com.pranav.lc.arrayString;
 
 /**
  * https://leetcode.com/problems/repeated-string-match/
