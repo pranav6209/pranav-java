@@ -46,6 +46,7 @@ public class R_Guess_Number_Higer_Lower {
   }
 
   public static void main(String[] args) {
+
     System.out.println(guessNumber(10));
   }
 

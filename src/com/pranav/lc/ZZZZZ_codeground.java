@@ -3,13 +3,9 @@
  */
 package com.pranav.lc;
 
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import org.junit.experimental.max.MaxCore;
 
 /**
  * @author pranavpatel
@@ -17,23 +13,56 @@ import org.junit.experimental.max.MaxCore;
  */
 public class ZZZZZ_codeground {
 
-  static String getInitlaAmount(String transactionAmount, String fee) {
-    // DecimalFormat df = new DecimalFormat("#.##").format(number);
-    String initalAmount = "";
+  static int shortestWordEditPath(String source, String target, String[] words) {
 
-    double txna = Double.parseDouble(transactionAmount);
-    double dfee = Double.parseDouble(fee);
+    for (int i = 0; i < words.length; i++) {
 
-    return new DecimalFormat("#.##").format(txna);
+      if (!Arrays.asList(words)
+        .contains(target))
+        return -1;
+
+    }
+
+    List<String> links = new ArrayList<>();
+    String currentSource = source;
+
+    for (int i = 0; i < words.length; i++) {
+      String word = words[i];
+      int diff = 0;
+      if (currentSource.equals(target))
+        break;
+      for (int j = 0; j < word.length(); j++) {
+        if (word.charAt(j) != currentSource.charAt(j))
+          diff++;
+      }
+
+      if (diff == 1) {
+        links.add(word);
+        currentSource = word;
+      }
+
+    }
+
+    links.forEach(link -> System.out.print(link + ","));
+    if (links.size() == 0)
+      return -1;
+    return links.size();
 
   }
 
   public static void main(String[] args) {
 
-    String transactionAmount = "10.2171111";
-    String fee = "11.2111";
+    // String source = "bit", target = "dog";
+    // String[] words = { "but", "put", "big", "pot", "pog", "dog", "lot" };
+    // System.out.println(shortestWordEditPath(source, target, words));
 
-    getInitlaAmount(transactionAmount, fee);
+    // String source = "abc", target = "ab";
+    // String[] words = { "abc", "ab" };
+    // System.out.println(shortestWordEditPath(source, target, words));
+
+    String source = "bit", target = "pog";
+    String[] words = { "but", "put", "big", "pot", "pog", "pig", "dog", "lot" };
+    System.out.println(shortestWordEditPath(source, target, words));
 
   }
 }

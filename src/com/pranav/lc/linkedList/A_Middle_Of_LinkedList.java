@@ -43,13 +43,13 @@ public class A_Middle_Of_LinkedList {
   * 
   */
 
-  public LinkedListNode middledOfLinkedList_1(LinkedListNode head) {
+  public static LinkedListNode middledOfLinkedList_1(LinkedListNode head) {
     
     //The number of nodes in the given list will be between 1 and 100. given
     LinkedListNode [] A = new LinkedListNode[100];
     int i=0;
     
-    while(head.next!=null) {
+    while(head!=null) {
       
       A[i++] =head;
       head = head.next;
@@ -65,7 +65,7 @@ public class A_Middle_Of_LinkedList {
    * When fast reaches the end of the list, slow must be in the middle.
    */
   
-  public LinkedListNode middledOfLinkedList_2(LinkedListNode head) {
+  public static LinkedListNode middledOfLinkedList_2(LinkedListNode head) {
     
     LinkedListNode slow=head,fast=head;
    
@@ -114,16 +114,18 @@ public class A_Middle_Of_LinkedList {
     
     //10->12->13->14->15
     LinkedListNode n = new LinkedListNode(10);
-    n.next= new LinkedListNode(12);
-    n.next.next= new LinkedListNode(13);
-    n.next.next.next= new LinkedListNode(14);
-    n.next.next.next.next= new LinkedListNode(15);
-    n.next.next.next.next.next= new LinkedListNode(16);
+//    n.next= new LinkedListNode(12);
+//    n.next.next= new LinkedListNode(13);
+//    n.next.next.next= new LinkedListNode(14);
+//    n.next.next.next.next= new LinkedListNode(15);
+//    n.next.next.next.next.next= new LinkedListNode(16);
     
     System.out.println("Linked List");
     print(n);
     
-    System.out.println("Middle: "+middledOfLinkedList(n).data);
+    System.out.println("Middle: "+middledOfLinkedList_1(n).data);
+    System.out.println("Middle: "+middledOfLinkedList_2(n).data);
+    System.out.println("Middle: "+middledOfLinkedList_3(n).data);
     
     
   }
