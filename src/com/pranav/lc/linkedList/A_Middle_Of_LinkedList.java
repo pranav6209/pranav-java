@@ -12,7 +12,7 @@ package com.pranav.lc.linkedList;
  */
 public class A_Middle_Of_LinkedList {
 
-  LinkedListNode head;
+  
   static class LinkedListNode {
 
     
@@ -73,6 +73,8 @@ public class A_Middle_Of_LinkedList {
     while(fast!=null && fast.next!=null) {
       
       slow= slow.next;
+      // this might be null in last iteration but we should be OK as we are returning slow
+      
       fast= fast.next.next;
       
     }
@@ -83,6 +85,7 @@ public class A_Middle_Of_LinkedList {
   
   public static LinkedListNode middledOfLinkedList_3(LinkedListNode head) {
     
+    //length 1
     int length=1;
     
     LinkedListNode current = head;
@@ -114,11 +117,11 @@ public class A_Middle_Of_LinkedList {
     
     //10->12->13->14->15
     LinkedListNode n = new LinkedListNode(10);
-//    n.next= new LinkedListNode(12);
-//    n.next.next= new LinkedListNode(13);
-//    n.next.next.next= new LinkedListNode(14);
-//    n.next.next.next.next= new LinkedListNode(15);
-//    n.next.next.next.next.next= new LinkedListNode(16);
+    n.next= new LinkedListNode(12);
+    n.next.next= new LinkedListNode(13);
+    n.next.next.next= new LinkedListNode(14);
+    n.next.next.next.next= new LinkedListNode(15);
+    n.next.next.next.next.next= new LinkedListNode(16);
     
     System.out.println("Linked List");
     print(n);

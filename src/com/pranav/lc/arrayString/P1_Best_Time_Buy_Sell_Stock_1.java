@@ -10,7 +10,9 @@ import java.util.Arrays;
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  *
  */
-public class P_Best_Time_Buy_Sell_Stock {
+
+//O(N^2) time O(1) space 
+public class P1_Best_Time_Buy_Sell_Stock_1 {
 
   static int buySellStock(int[] prices) {
 
@@ -20,7 +22,7 @@ public class P_Best_Time_Buy_Sell_Stock {
       for (int j = i + 1; j < prices.length; j++) {
 
         // make sure to do j-i as first buy and then sell so subtracting
-        // buy at samllest and then sell at higher
+        // buy at smallest and then sell at higher
         int profit = prices[j] - prices[i];
 
         if (profit > maxProfit) {
@@ -33,6 +35,8 @@ public class P_Best_Time_Buy_Sell_Stock {
     return maxProfit;
   }
 
+  // basically in one pass get the minimum number and get the max profit;
+  // O(N) time O(1) space 
   static int buySellStock1(int[] prices) {
 
     int minPrice = Integer.MAX_VALUE;
@@ -57,5 +61,6 @@ public class P_Best_Time_Buy_Sell_Stock {
 
     System.out.println(buySellStock(nums));
     System.out.println(buySellStock1(nums));
+    //System.out.println(buySellStock2(nums));
   }
 }

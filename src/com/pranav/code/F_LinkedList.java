@@ -44,7 +44,7 @@ public class F_LinkedList {
     
     while(n!=null) {
       System.out.println(n.data);
-      n=n.next;
+      n=n.next; //i++
       
     }
   }
