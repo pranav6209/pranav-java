@@ -10,6 +10,10 @@ import com.pranav.company.A_Veeva;
 
 /**
  * @author pranavpatel
+ * 
+ * 30 day challenge
+ * 
+ * https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3289/
  *
  */
 public class U_Count_Elements {
@@ -24,6 +28,7 @@ public class U_Count_Elements {
     
     while (i < arr.length && j < arr.length) {
       while (j < arr.length) {
+        
         if (arr[j] == 1 + arr[i]) {
 
           res = res + j - i;

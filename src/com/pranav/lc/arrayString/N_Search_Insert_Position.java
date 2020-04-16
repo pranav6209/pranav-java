@@ -5,6 +5,8 @@ package com.pranav.lc.arrayString;
 
 /**
  * @author pranavpatel
+ * 
+ * https://leetcode.com/problems/search-insert-position/
  *
  */
 public class N_Search_Insert_Position {
@@ -19,6 +21,7 @@ public class N_Search_Insert_Position {
     for (int i = 0; i < nums.length; i++) {
 
       if (target==nums[i])return i;
+      // sorted array so just check >. if you check < all will be less 
       if(nums[i]>target) return i;
 
     }

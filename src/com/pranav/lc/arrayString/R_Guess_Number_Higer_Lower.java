@@ -33,7 +33,7 @@ public class R_Guess_Number_Higer_Lower {
 
       if (val == 0)
         return mid;
-
+      // guessed number is higher search on left
       if (val == 1)
         l = mid + 1;
 

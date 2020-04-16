@@ -10,6 +10,8 @@ package com.pranav.lc.arrayString;
  *
  *         * fast pointer(j) runs through each array elements and slow pointer
  *         (i) stays back to check weather i and j are different or not.
+ *         
+ *         here i is keeping track of the index, where we inserting an element
  */
 public class F_Remove_Element {
 
@@ -22,8 +24,11 @@ public class F_Remove_Element {
 
     for (int j = 0; j < nums.length; j++) {
 
-      // if array value is not equal to value to be removed add it to an array
-      //https://www.sears.com/beats-by-dr-dre-970103076m-solo-3-wireless/p-SPM9121718002?rrec=true
+      // goal here is to move all un removed number to front and doen't matter what we left behind
+      // so no need to swap i and j just. just assign value of j to i.
+     
+      
+      // if array value is not equal to value to be removed add it to an array 
       if (nums[j] != val) {
         // put value of unmatched element into new index in
         // existing array and increment slow pointer

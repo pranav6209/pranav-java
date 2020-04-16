@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author pranavpatel
  * 
- *         https://leetcode.com/submissions/detail/252422253/
+ *         https://leetcode.com/problems/count-and-say/
  *
  */
 public class O_Count_And_Say {
@@ -35,6 +35,7 @@ public class O_Count_And_Say {
 
         int count = 0;
 
+        // match with current char and then increase j and count till char is same
         while (j < prevSeq.length() && curr == prevSeq.charAt(j)) {
 
           count++;
@@ -58,14 +59,14 @@ public class O_Count_And_Say {
 
   public static void main(String[] args) {
 
-    List<Integer> sequancesToPrint = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-    sequancesToPrint.stream()
-      .map(O_Count_And_Say::countAndSay)
-      .forEach(System.out::println);
-    
-    // int n = 5;
-    // System.out.println(countAndSay(n));
+//    List<Integer> sequancesToPrint = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+//
+//    sequancesToPrint.stream()
+//      .map(O_Count_And_Say::countAndSay)
+//      .forEach(System.out::println);
+//    
+     int n = 5;
+     System.out.println(countAndSay(n));
   }
 
 }

@@ -6,13 +6,17 @@ package com.pranav.lc.arrayString;
 /**
  * @author pranavpatel
  * 
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
+ * 
+ * solution explanation 
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.
- *  // valley and peak algo
+ *  
+ * // valley and peak algo
  *  time complexity 0(n)
  *  space complexity 0(1)
  *
  */
-public class P2_BEst_Time_Buy_Sell_2 {
+public class P2_Best_Time_Buy_Sell_2 {
   public static int maxProfit(int[] prices) {
         
     int i = 0, buy, sell, profit = 0, n = prices.length-1; // length-1 as we are doing i+1 below

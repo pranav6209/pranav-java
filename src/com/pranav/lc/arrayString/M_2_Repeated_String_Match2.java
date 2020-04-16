@@ -4,6 +4,8 @@
 package com.pranav.lc.arrayString;
 
 /**
+ * 
+ * https://leetcode.com/problems/repeated-string-match/
  * @author pranavpatel
  *
  */
@@ -18,6 +20,9 @@ public class M_2_Repeated_String_Match2 {
       sb.append(A);
     }
     int k = 0;
+    
+    // k has to be less than 0 as length is same now, both strings are same at this point or 
+    // one more repetition max
     while (k < 2) {
       // The repeated version of A should have atleast B length. The possibility is
       // that the String A

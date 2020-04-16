@@ -8,12 +8,14 @@ import java.util.Arrays;
 /**
  * @author pranavpatel
  * 
- *         https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/submissions/
+ *         https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
  * 
  *         Array two pointer ( Binary Search ) 1. 1st Pointer start from
  *         beginning and 2nd pointer starts from end They move toward each other
  *         until they both meet. .
  *
+ *       *space complexity :0(N+logn) - binary search O(logn)  
+ *        time complexity :0(N)
  * 
  */
 public class B_twoSumSortedArray {
@@ -24,7 +26,8 @@ public class B_twoSumSortedArray {
 
       int complement = target - numbers[i];
 
-      // how??
+      // in the case of [1,1,2,3,4] targer 2, in the first iteration looking for 1 and it is a sorted 
+      // array should be next to it
       if (complement == numbers[i])
         return new int[] { i + 1, i + 2 };
 

@@ -19,15 +19,16 @@ public class H_sortArrayByParity {
 
     for (int j = 0; j < nums.length; j++) {
 
-      // get the even number and then move them at the front of the array
+      // get the even number and then move them at the front of the array using slow
+      // index(i)
       if (nums[j] % 2 == 0) {
-
+        // swap the number using temp variables and put them at fast index(j)
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
         i++;
 
-      } 
+      }
 
     }
 

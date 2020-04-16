@@ -6,7 +6,7 @@ package com.pranav.lc.arrayString;
 /**
  * https://leetcode.com/problems/repeated-string-match/
  * 
- * two solutions 
+ * two solutions no 2 is better and easy
  * 
  * @author pranavpatel
  *

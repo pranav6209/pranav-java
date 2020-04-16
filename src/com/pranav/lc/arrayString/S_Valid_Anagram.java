@@ -9,6 +9,8 @@ import java.util.Map;
 
 /**
  * @author pranavpatel
+ * 
+ * https://leetcode.com/problems/valid-anagram/
  *
  */
 public class S_Valid_Anagram {
@@ -47,7 +49,8 @@ public class S_Valid_Anagram {
     if (s == null || t == null)
       return true;
 
-
+    // iterate over first String char and put in to map of
+    // char and no of time repeated
     for (int i = 0; i < s.length(); i++) {
       int value;
       char cuurentCh = s.charAt(i);

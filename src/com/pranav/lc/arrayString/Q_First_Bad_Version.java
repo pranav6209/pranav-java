@@ -5,6 +5,11 @@ package com.pranav.lc.arrayString;
 
 /**
  * @author pranavpatel
+ * 
+ * https://leetcode.com/problems/first-bad-version/
+ * 
+ * Explanation 
+ * https://leetcode.com/problems/first-bad-version/solution/
  *
  */
 public class Q_First_Bad_Version {
@@ -21,19 +26,22 @@ public class Q_First_Bad_Version {
   public static int firstBadVesrions(int n) {
 
     int l = 0;
-    int r = n - 1;
+    int r = n;
     int mid;
-    while (l <= r) {
+    while (l < r) {
 
       mid = l + (r - l) / 2;
 
       if (isBadVersion(mid)) {
 
-        r = mid - 1;
+        r = mid;
       } else
         l = mid + 1;
 
     }
+    
+    // here returning l as we want to return the first bad version and that will be at the beginning 
+    // left
     return l;
   }
   

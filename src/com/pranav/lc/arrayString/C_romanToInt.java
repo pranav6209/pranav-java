@@ -25,6 +25,7 @@ public class C_romanToInt {
 
     int result = 0;
 
+    // map of character and its value
     Map<Character, Integer> map = new HashMap<>();
 
     map.put('I', 1);

@@ -4,13 +4,13 @@
 package com.pranav.lc.arrayString;
 
 /**
- * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
- * @author pranavpatel two pointer -- fast and slow
+ *         https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ *         @author pranavpatel two pointer -- fast and slow
  * 
  *         fast pointer(j) runs through each array elements and slow pointer (i)
  *         stays back to check weather i and j are different or not.
  *         
- *         here j is keeping track of the index, where we inserting an element
+ *         here i is keeping track of the index, where we inserting an element
  */
 public class E_remove_duplicate_sorted_array {
   public static int removeDuplicates(int[] nums) {
@@ -24,7 +24,9 @@ public class E_remove_duplicate_sorted_array {
       int value1 = nums[i];
       int value2 = nums[j];
 
-      // if both the values are not same then only add it an array
+      // goal here is to move non duplicate number to front and doen't matter what we left behind
+      // so no need to swap i and j just. just assign value of j to i.
+      // do if when both value are different
       if (value1 != value2) {
         // make sure to first increment and then assign the value
         i++;

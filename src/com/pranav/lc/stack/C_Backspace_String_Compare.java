@@ -7,8 +7,17 @@ import java.util.Stack;
 
 /**
  * @author pranavpatel
+ * 
+ * https://leetcode.com/problems/backspace-string-compare/
+ *  
+ *  Time Complexity O(N)
+ *  Space Complexity O(1)
+ * 
+ * for stack push and pop are O(N) operations
  *
  */
+
+
 public class C_Backspace_String_Compare {
 
   public static boolean backspaceCompare(String S, String T) {

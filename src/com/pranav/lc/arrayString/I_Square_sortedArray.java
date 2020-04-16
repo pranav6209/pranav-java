@@ -12,7 +12,9 @@ import java.util.Arrays;
  * 
  * 1. get the beginning index of the negative number 
  * 2. from negative no, go left and right 
- * 3. compare and put it into new array
+ * 3. compare and put it into new array while (i < A.length && j >= 0)
+ * 4. make sure to cover  remaining elements by    while (j >= 0)
+ * 5. make sure to cover  remaining elements by    while (i < A.length)  
  *
  */
 public class I_Square_sortedArray {
@@ -38,6 +40,7 @@ public class I_Square_sortedArray {
     int t = 0;
 
     // better to use while as initial value of i and j is already defined up above
+    // J>=0 as we want to use first element of the array as well
     while (i < A.length && j >= 0) {
 
       // put the smaller one in new array
@@ -59,6 +62,8 @@ public class I_Square_sortedArray {
       }
     }
 
+    // as above while  i<A.length && j>=0, one of the condition fails we want to insert 
+    // remaining i and j
     while (j >= 0) {
       newArray[t++] = A[j] * A[j];
       j--;

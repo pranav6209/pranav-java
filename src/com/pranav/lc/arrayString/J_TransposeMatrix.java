@@ -13,15 +13,15 @@ public class J_TransposeMatrix {
 
   public static void transposeMatrix(int[][] A) {
 
-    int col = A.length;
-    int row = A[0].length;
-    int traMatrix[][] = new int[row][col];
+    int row = A.length;
+    int col = A[0].length;
+    int traMatrix[][] = new int[col][row];
     System.out.println("Transpose Matrix");
 
-    for (int i = 0; i < col; i++) {
-      for (int j = 0; j < row; j++) {
+    for (int i = 0; i < row; i++) {
+      for (int j = 0; j < col; j++) {
 
-        traMatrix[i][j] = A[j][i];
+        traMatrix[j][i] = A[i][j];
 
       }
 
@@ -31,10 +31,10 @@ public class J_TransposeMatrix {
   }
 
   public static void printMultiArray(int[][] Array) {
-    // col
+    // row
     for (int i = 0; i < Array.length; i++) {
 
-      // row
+      // col
       for (int j = 0; j < Array[0].length; j++) {
         System.out.print(Array[i][j]);
         System.out.print(" ");
@@ -49,7 +49,8 @@ public class J_TransposeMatrix {
   public static void main(String[] args) {
 
     // int [][] A = new int [3][4];
-    int[][] A = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    //int[][] A = { { 1, 2,3 }, { 4, 5,6}, { 7, 8,9} };
+    int[][] A = { { 1, 2,3 }, { 4, 5,6} };
 
     // A[0][0] = 1;
     // A[0][1] = 2;

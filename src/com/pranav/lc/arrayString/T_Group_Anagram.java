@@ -11,6 +11,11 @@ import java.util.Map;
 
 /**
  * @author pranavpatel
+ * 
+ * as in anagram sorted string is same if there is valid anagarm
+ * 
+ * 1. add a sorted string as a key and all the other strings which is same in sorted order as a value;
+ * 
  *
  */
 public class T_Group_Anagram {

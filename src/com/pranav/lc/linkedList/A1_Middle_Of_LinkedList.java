@@ -10,9 +10,11 @@ package com.pranav.lc.linkedList;
  * https://leetcode.com/problems/middle-of-the-linked-list/
  *
  */
-public class A_Middle_Of_LinkedList {
+public class A1_Middle_Of_LinkedList {
 
   
+  
+  //Definition of node class
   static class LinkedListNode {
 
     
@@ -115,7 +117,9 @@ public class A_Middle_Of_LinkedList {
   
   public static void main(String[] args) {
     
-    //10->12->13->14->15
+    //10->12->13->14->15->16
+    
+    // in this first node will stay as head and new node will be next of head check A2 
     LinkedListNode n = new LinkedListNode(10);
     n.next= new LinkedListNode(12);
     n.next.next= new LinkedListNode(13);

@@ -13,12 +13,16 @@ import java.util.Map;
  * 
  * Array HashTable
  *
+ *same no can't use twice and only one pair exists
+ *
+ *space complexity :0(N) -  
+ *time complexity :0(N)
  */
 public class A_twoSum {
 
   public static int[] twoSum(int[] nums, int target) {
    
-    // map 
+    // map of number and its indices
     Map<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
       int complement = target - nums[i];
