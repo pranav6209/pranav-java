@@ -21,7 +21,7 @@ package com.pranav.lc.trees;
 
   Space Complexity: O(N), the size of our implicit call stack during our depth-first search.
  */
-public class A_Diameter_Of_Binary_Tree {
+public class B_Diameter_Of_Binary_Tree {
 
   static class TreeNode {
 
