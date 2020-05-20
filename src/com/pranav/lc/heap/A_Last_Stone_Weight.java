@@ -45,9 +45,9 @@ public class A_Last_Stone_Weight {
   public static void testQueue() {
 
     Stack<Integer> stack = new Stack<>();
-
-    stack.peek();
+    
     stack.push(1);
+    stack.peek();
     stack.pop();
     stack.isEmpty();
     
@@ -56,8 +56,8 @@ public class A_Last_Stone_Weight {
     
     
     queue.add(5); 
-    queue.remove();
     queue.peek();
+    queue.remove();
     queue.isEmpty();
   }
 

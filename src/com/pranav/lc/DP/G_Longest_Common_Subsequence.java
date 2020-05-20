@@ -13,6 +13,12 @@ package com.pranav.lc.DP;
  * https://leetcode.com/problems/longest-common-subsequence/discuss/398711/ALL-4-ways-Recursion-greater-Top-down-greaterBottom-Up-greater-Efficient-Solution-O(N)-including-VIDEO-TUTORIAL
  *
  */
+
+// not contiguous subsequence here 
+
+
+// time complexity - O(m*n)
+// space complexity - O(m*n)
 public class G_Longest_Common_Subsequence {
 
   public static int lcs(String String1, String String2) {

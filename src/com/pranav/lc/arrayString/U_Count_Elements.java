@@ -36,7 +36,7 @@ public class U_Count_Elements {
         }
         
         if(arr[j] > 1 + arr[i]) {
-          i=j;
+          i = j;
         }
           
         j++;

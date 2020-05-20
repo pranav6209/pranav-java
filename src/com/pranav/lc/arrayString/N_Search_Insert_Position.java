@@ -11,6 +11,8 @@ package com.pranav.lc.arrayString;
  */
 public class N_Search_Insert_Position {
 
+  
+  // can be done with Binary Search as it is a sorted array ?
   public static int searchInsert(int[] nums, int target) {
 
     if (target < nums[0])

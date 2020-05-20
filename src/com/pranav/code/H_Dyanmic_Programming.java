@@ -4,6 +4,11 @@
 package com.pranav.code;
 
 /**
+ * 
+ *CTCI 
+ *
+ *also 
+ *https://www.youtube.com/watch?v=UxICsjrdlJA&list=PL2_aWCzGMAwLz3g66WrxFGSXvSsvyfzCO&index=5
  * @author pranavpatel
  *
  */
@@ -33,6 +38,8 @@ public class H_Dyanmic_Programming {
     if (i == 0 || i == 1)
       return i;
 
+    //as we are initializing array of (n+1). all elements are zero.
+    // memo[i]==0 means if that element is not yet calculated, calculate otherwise return from memo[]
     if (memo[i] == 0) {
 
       memo[i] = fibonacciTopDown(i - 1, memo) + fibonacciTopDown(i - 2, memo);
