@@ -26,7 +26,7 @@ public class B_twoSumSortedArray {
 
       int complement = target - numbers[i];
 
-      // in the case of [1,1,2,3,4] targer 2, in the first iteration looking for 1 and it is a sorted 
+      // in the case of [1,1,2,3,4] target 2, in the first iteration looking for 1 and it is a sorted 
       // array should be next to it
       if (complement == numbers[i])
         return new int[] { i + 1, i + 2 };
@@ -49,7 +49,7 @@ public class B_twoSumSortedArray {
   }
 
   // Binary search with recursive approach. better explanation CTCI 6 page no :149
-  public static int binarySearchRecursive(int arr[], int l, int r, int x) {
+  public static int binarySearchRecursive(int [] arr, int l, int r, int x) {
 
     while (l <= r) {
       int mid = l + (r - l) / 2;
@@ -74,14 +74,14 @@ public class B_twoSumSortedArray {
     return -1;
   }
 
-  public static int binarySearch(int arr[], int target) {
+  public static int binarySearch(int [] arr, int target) {
 
     int l = 0;
     int r = arr.length-1;
     int mid=0;
     while (l <= r) {
 
-       mid = r + (l - r) / 2;
+       mid = l + (r - l) / 2;
 
       if (target ==arr[mid])
         return mid;

@@ -24,13 +24,16 @@ public class T_Group_Anagram {
 
   public static List<List<String>> groupAnagrams(String[] strs) {
 
-    if (strs.length == 0) return new ArrayList();
+    if (strs.length == 0) return new ArrayList<List<String>>();
+   
     Map<String, List<String>> map = new HashMap<>();
     
     for (int i = 0; i < strs.length; i++) {
       
       char[] ch = strs[i].toCharArray();
+      
       Arrays.sort(ch);
+      
       String sortedString = String.valueOf(ch);
 
       if (map.containsKey(sortedString)) {

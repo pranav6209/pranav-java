@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.stack;
+package com.pranav.lc.stackQueueHeap.stack;
 
 import java.util.Stack;
 
@@ -11,14 +11,14 @@ import java.util.Stack;
  * https://leetcode.com/problems/backspace-string-compare/
  *  
  *  Time Complexity O(N)
- *  Space Complexity O(1)
+ *  Space Complexity O(S+T)
  * 
- * for stack push and pop are O(N) operations
+ * for stack push and pop are O(1) operations
  *
  */
 
 
-public class C_Backspace_String_Compare {
+public class A3_Backspace_String_Compare {
 
   public static boolean backspaceCompare(String S, String T) {
 
@@ -47,6 +47,7 @@ public class C_Backspace_String_Compare {
       }
 
     }
+    // time compexity O(N)
     return st2.equals(st1);
   }
 

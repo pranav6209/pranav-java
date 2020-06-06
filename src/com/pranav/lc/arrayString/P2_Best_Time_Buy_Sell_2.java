@@ -23,13 +23,22 @@ public class P2_Best_Time_Buy_Sell_2 {
 
     while (i < n) {
 
-      while (i < n && prices[i + 1] <= prices[i])
+      // iterate through numbers till we see a dropping pattern and 
+      // get the minimum value
+      // buy first
+      while (i < n && prices[i + 1] <= prices[i]) {
         i++;
+        }
       buy = prices[i];
       // valley = price[i]
 
-      while (i < n && prices[i + 1] > prices[i])
+      
+      // iterate through number till we see incresasing 
+      //pattern 
+      // sell and get the profit
+      while (i < n && prices[i + 1] > prices[i]) {
         i++;
+      }
       sell = prices[i];
       //peack = price[i]
       profit = profit + (sell - buy);

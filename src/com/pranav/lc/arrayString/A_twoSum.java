@@ -13,7 +13,7 @@ import java.util.Map;
  * 
  * Array HashTable
  *
- *same no can't use twice and only one pair exists
+ *same number can't use twice and only one pair exists
  *
  *space complexity :0(N) -  
  *time complexity :0(N)

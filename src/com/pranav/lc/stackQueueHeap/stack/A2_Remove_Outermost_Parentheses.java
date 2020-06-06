@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.stack;
+package com.pranav.lc.stackQueueHeap.stack;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,9 +11,15 @@ import java.util.Stack;
  * @author pranavpatel
  * 
  * https://leetcode.com/problems/remove-outermost-parentheses/
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(N)
+ * 
+ * Better solution without using Stack 
+ * https://leetcode.com/problems/remove-outermost-parentheses/discuss/270566/My-Java-3ms-Straight-Forward-Solution-or-Beats-100
  *
  */
-public class B_Remove_Outermost_Parentheses {
+public class A2_Remove_Outermost_Parentheses {
 
   public static String removeOutermostParentheses(String s) {
 
@@ -66,7 +72,7 @@ public class B_Remove_Outermost_Parentheses {
   //  patterns.stream().forEach(pattern->System.out.println(pattern));
 
     patterns.stream()
-      .map(B_Remove_Outermost_Parentheses::removeOutermostParentheses)
+      .map(A2_Remove_Outermost_Parentheses::removeOutermostParentheses)
       .forEach(System.out::println);
 
   }

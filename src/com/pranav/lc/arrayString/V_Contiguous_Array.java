@@ -12,6 +12,10 @@ import java.util.Map;
  * https://leetcode.com/problems/contiguous-array/
  * 
  * https://www.youtube.com/watch?v=VM5Mh3-UFPg
+ * 
+ * time complexity O(N)
+ * if the all value is either O or 1 in worst case map will gorw till n
+ * space complexity O(N)
  *
  */
 public class V_Contiguous_Array {

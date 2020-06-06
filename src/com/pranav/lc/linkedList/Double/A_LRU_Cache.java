@@ -5,7 +5,7 @@ package com.pranav.lc.linkedList.Double;
 
 import java.util.HashMap;
 
-import com.pranav.lc.heap.A_Last_Stone_Weight;
+import com.pranav.lc.stackQueueHeap.Heap.A_Last_Stone_Weight;
 
 /**
  * @author pranavpatel

@@ -15,12 +15,16 @@ public class J_TransposeMatrix {
 
     int row = A.length;
     int col = A[0].length;
+    
+    // new matrix of [col] [row] and not [row][col] 
     int traMatrix[][] = new int[col][row];
     System.out.println("Transpose Matrix");
 
     for (int i = 0; i < row; i++) {
       for (int j = 0; j < col; j++) {
 
+        // as we are iterating over original matrx we use i j for A and tranMatrix[j][i]
+        // else we ll get out of bound try with uneven matrix int[][] A = { { 1, 2,3 }, { 4, 5,6} };
         traMatrix[j][i] = A[i][j];
 
       }

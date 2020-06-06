@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.stack;
+package com.pranav.lc.stackQueueHeap.stack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,12 +18,13 @@ import java.util.Stack;
  *           space complexity O(n)
  *
  */
-public class E_Valid_Parentheses_String {
+public class A5_Valid_Parentheses_String {
   public static boolean checkValidString(String s) {
 
     Stack<Integer> charStack = new Stack<>();
     Stack<Integer> startStack = new Stack<>();
 
+    // this should take care of all the closing brackets balancing 
     for (int i = 0; i < s.length(); i++) {
 
       char currenntCh = s.charAt(i);
@@ -35,10 +36,10 @@ public class E_Valid_Parentheses_String {
       // for closing brackets
       else {
 
-        // if there is open bracket pop it.
+        // if there is open bracket pop it.to balance left
         if (!charStack.isEmpty())
           charStack.pop();
-        // if there is a * pop it.
+        // if there is a * pop it.to balance left
         else if (!startStack.isEmpty())
           startStack.pop();
         // if there is no open bracket and no star there is no way this is a valid
@@ -51,16 +52,15 @@ public class E_Valid_Parentheses_String {
 
     }
 
-    // above should take care of all the closing brackets
-
     // iterate over open brackets indexes
-    // if statStack is not empty, we ll use it as an empty string
+    // if charStack is empty and starstack is not, we ll convert starstacks to zero
+    // but if charstack is not emapty, we ll have to balance that using starStack,
     while (!charStack.isEmpty()) {
 
       if (startStack.isEmpty())
         return false;
 
-      // if index of open bracke is less than star then only we can use star as a
+      // if index of open bracket is less than star then only we can use star as a
       // closing.
       else if (charStack.peek() < startStack.peek()) {
 

@@ -1,9 +1,8 @@
 /**
  * 
  */
-package com.pranav.lc.heap;
+package com.pranav.lc.stackQueueHeap.Heap;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -38,6 +37,7 @@ public class A_Last_Stone_Weight {
       if (stone1 != stone2)
         maxHeap.add(stone1 - stone2);
     }
+    // if at the end both the coins are same and destroyed maxHeap is empty
     return maxHeap.isEmpty() ? 0 : maxHeap.poll();
 
   }

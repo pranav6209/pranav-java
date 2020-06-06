@@ -23,6 +23,7 @@ public class L_Repeated_Substring_Pattern {
       // there is no repetition
       if (n % repeat != 0)
         continue;
+    
       int currentSubstrLen = n / repeat;
       // variable that will start form the currentSubstrLen and iterate through string
       // length

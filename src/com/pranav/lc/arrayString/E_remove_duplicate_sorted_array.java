@@ -26,7 +26,7 @@ public class E_remove_duplicate_sorted_array {
 
       // goal here is to move non duplicate number to front and doen't matter what we left behind
       // so no need to swap i and j just. just assign value of j to i.
-      // do if when both value are different
+      // we have to do it when both values are different
       if (value1 != value2) {
         // make sure to first increment and then assign the value
         i++;

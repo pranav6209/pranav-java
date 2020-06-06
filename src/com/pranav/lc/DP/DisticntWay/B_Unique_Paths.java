@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.DP;
+package com.pranav.lc.DP.DisticntWay;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
  *         https://www.youtube.com/watch?v=GO5QHC_BmvM
  *
  */
-public class E_Unique_Paths {
+public class B_Unique_Paths {
 
   public static int countUniquePaths(int noOfRow, int noOfCol) {
 
@@ -22,12 +22,16 @@ public class E_Unique_Paths {
 
     for (int row = 0; row < noOfRow; row++) {
       for (int col = 0; col < noOfCol; col++) {
+        // only one way to reach here
         if (row == 0 && col == 0)
           grid[row][col] = 1;
+        // only one way to reach here
         else if (row == 0 && col != 0)
           grid[row][col] = 1;
+        // only one way to reach here 
         else if (col == 0 && row != 0)
           grid[row][col] = 1;
+        //can reach here by either top col or left row
         else
           grid[row][col] = grid[row - 1][col] + grid[row][col-1];
       }

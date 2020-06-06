@@ -1,12 +1,14 @@
 /**
  * 
  */
-package com.pranav.lc.stack;
+package com.pranav.lc.stackQueueHeap;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  * @author pranavpatel
@@ -15,14 +17,14 @@ import java.util.Queue;
  *         https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/531/week-4/3313/
  *
  */
-public class F_First_Unique_Number2 {
+public class F_First_Unique_Number {
 
   // map of value and frequency
   Map<Integer, Integer> map;
   // Set<Integer> set;
   Queue<Integer> queue;
 
-  F_First_Unique_Number2(int[] nums) {
+  F_First_Unique_Number(int[] nums) {
 
     // inserting an element is O(N)
     map = new HashMap<>();
@@ -36,18 +38,9 @@ public class F_First_Unique_Number2 {
 
   public int showFirstUnique() {
 
-    int res = 0;
-
-    while (!queue.isEmpty() && map.get(queue.peek()) > 1) {
-      queue.remove();
-    }
-
-    if (queue.isEmpty()) {
-      res = -1;
-
-    }
-
-    else {
+    int res = -1;
+    if (!queue.isEmpty()) {
+      // O(1)
       res = queue.peek();
     }
 
@@ -62,6 +55,11 @@ public class F_First_Unique_Number2 {
       // 0(1)
       map.put(value, map.get(value) + 1);
       // remove it from queue if value is more than 1
+      if (!queue.isEmpty())
+        // i think it is search and remove so O(N)
+        // O(N) this will increase the time complexity and it will not work 
+        //remove it from queue so there is no duplicate in queue
+        queue.remove(value);
     }
 
     else {
@@ -106,7 +104,7 @@ public class F_First_Unique_Number2 {
      */
 
     int[] nums = { 809 };
-    F_First_Unique_Number2 firstUnique = new F_First_Unique_Number2(nums);
+    F_First_Unique_Number firstUnique = new F_First_Unique_Number(nums);
     firstUnique.showFirstUnique(); // return 809
     firstUnique.add(809); // the queue is now [809,809]
     firstUnique.showFirstUnique(); // return -1

@@ -6,7 +6,7 @@ package com.pranav.lc.arrayString;
 /**
  * https://leetcode.com/problems/repeated-string-match/
  * 
- * two solutions no 2 is better and easy
+ * following solution 1 at this point 
  * 
  * @author pranavpatel
  *
@@ -29,7 +29,7 @@ public class M_1_Repeated_String_Match {
           // if iteration over A reaches the length and B is still not reach till end
           // start A from beginning and increase the count.
           if (startIx >= A.length() && j < B.length()) {
-            startIx = startIx % A.length();
+            startIx = 0;
             count++;
           }
         }

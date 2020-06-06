@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.DP;
+package com.pranav.lc.DP.DisticntWay;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
  *         https://www.youtube.com/watch?v=jgiZlGzXMBw 08:05 for logic
  *
  */
-public class D_Stair_Case {
+public class A_Stair_Case {
 
   public static int climbStairs(int n) {
 
@@ -39,7 +39,7 @@ public class D_Stair_Case {
 
   public static void main(String[] args) {
 
-    int noOfStair = 2;
+    int noOfStair = 8;
 
     System.out.println(climbStairs(noOfStair));
   }

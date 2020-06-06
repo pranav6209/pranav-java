@@ -8,6 +8,9 @@ import java.util.Arrays;
 /**
  * @author pranavpatel
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ * 
+ * 
+ * Discuss both the solution but finally do with second method 
  *
  */
 

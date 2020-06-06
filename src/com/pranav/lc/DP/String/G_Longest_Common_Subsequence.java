@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.DP;
+package com.pranav.lc.DP.String;
 
 /**
  * @author pranavpatel
@@ -23,6 +23,10 @@ public class G_Longest_Common_Subsequence {
 
   public static int lcs(String String1, String String2) {
 
+    // here we are creating bigger matrix as we can not come up with pre defined values for first row and col
+    // we want to calculate based on previous values(row-1,col-1) so for first row and col we are setting row-1 and col-1 zero
+    
+    
     // on the 0th index, storing 0s for row and columns so length+1
 
     int[][] grid = new int[String1.length() + 1][String2.length() + 1];

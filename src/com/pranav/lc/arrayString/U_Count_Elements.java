@@ -26,7 +26,7 @@ public class U_Count_Elements {
     Arrays.sort(arr);
     System.out.println(Arrays.toString(arr));
     
-    while (i < arr.length && j < arr.length) {
+    //while (i < arr.length && j < arr.length) {
       while (j < arr.length) {
         
         if (arr[j] == 1 + arr[i]) {
@@ -42,7 +42,7 @@ public class U_Count_Elements {
         j++;
       }
 
-    }
+   // }
     return res;
   }
 

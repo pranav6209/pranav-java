@@ -1,15 +1,16 @@
 /**
  * 
  */
-package com.pranav.lc.stack;
+package com.pranav.lc.stackQueueHeap.stack;
 
 import java.util.Stack;
 
 /**
- * @author pranavpatel https://leetcode.com/problems/min-stack/
+ * @author pranavpatel 
+ *         https://leetcode.com/problems/min-stack/
  *         https://leetcode.com/problems/min-stack/discuss/49010/Clean-6ms-Java-solution
  */
-public class D_Min_Stack {
+public class A4_Min_Stack {
 
   // this variable keep tracks of current head
   ListNode head;
@@ -31,9 +32,11 @@ public class D_Min_Stack {
 
   public void push(int x) {
 
+    // create a new node that will be my head
     if (head == null)
       head = new ListNode(x, x, null);// means a first/last node, reference to next is null
     else
+      // current head is next and new node is now my head;
       head = new ListNode(x, Math.min(x, head.min), head);
 
   }
@@ -57,7 +60,7 @@ public class D_Min_Stack {
 
   public static void main(String[] args) {
 
-    D_Min_Stack min_Stack = new D_Min_Stack();
+    A4_Min_Stack min_Stack = new A4_Min_Stack();
 
     min_Stack.push(-2);
     min_Stack.push(0);

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.lc.DP;
+package com.pranav.lc.DP.MinMaxToTarget;
 
 /**
  * @author pranavpatel
