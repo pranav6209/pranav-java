@@ -12,6 +12,10 @@ package com.pranav.lc.arrayString;
  *         (i) stays back to check weather i and j are different or not.
  *         
  *         here i is keeping track of the index, where we inserting an element
+ *         
+ *         
+ *         time : O(N)
+ *         space : O(1)
  */
 public class F_Remove_Element {
 

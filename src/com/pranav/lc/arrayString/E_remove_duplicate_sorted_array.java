@@ -11,6 +11,10 @@ package com.pranav.lc.arrayString;
  *         stays back to check weather i and j are different or not.
  *         
  *         here i is keeping track of the index, where we inserting an element
+ *         
+ *         
+ *         time : O(N)
+ *         space : O(1)
  */
 public class E_remove_duplicate_sorted_array {
   public static int removeDuplicates(int[] nums) {

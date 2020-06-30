@@ -37,6 +37,11 @@ public class I_ASCII {
     //https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
     System.out.println('1' - '0');
     System.out.println('2' - '0');
+    
+    
+    //Alos this
+    
+    //https://leetcode.com/problems/replace-the-substring-for-balanced-string/
   }
 
   public static void main(String[] args) {
