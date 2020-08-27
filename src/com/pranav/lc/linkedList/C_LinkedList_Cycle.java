@@ -8,6 +8,9 @@ package com.pranav.lc.linkedList;
  *
  *         https://www.youtube.com/watch?v=zbozWoMgKW0
  *         https://leetcode.com/problems/linked-list-cycle/solution/
+ *         
+ *         time : O(N)
+ *         space : O(1)
  *
  */
 public class C_LinkedList_Cycle {

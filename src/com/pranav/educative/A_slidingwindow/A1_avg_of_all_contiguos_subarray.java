@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.educative.slidingwindow;
+package com.pranav.educative.A_slidingwindow;
 
 import java.util.ArrayList;
 import java.util.Arrays;

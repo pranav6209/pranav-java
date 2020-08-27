@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.educative.twopointer;
+package com.pranav.educative.B_twopointer;
 
 import java.util.Arrays;
 import java.util.HashMap;
