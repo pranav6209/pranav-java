@@ -3,7 +3,7 @@
  */
 package com.pranav.educative.C_FastSlowPointer;
 
-import com.pranav.educative.ListNode;
+import com.pranav.ListNode;
 
 /**
  * @author pranavpatel

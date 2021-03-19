@@ -14,7 +14,7 @@ import java.util.List;
  * 
  * time complexity : O(N!+N) where n is the no elements. additional N for tempList.contains()
  *
- * space complexity : O(N) where n is the no elements  
+ * space complexity : O(N) where n is the no elements . if we consider result it is O(N!N) 
  * 
  * 
  * https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071

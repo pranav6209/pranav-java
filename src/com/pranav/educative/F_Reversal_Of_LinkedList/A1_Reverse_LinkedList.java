@@ -3,7 +3,7 @@
  */
 package com.pranav.educative.F_Reversal_Of_LinkedList;
 
-import com.pranav.educative.ListNode;
+import com.pranav.ListNode;
 
 /**
  * @author pranavpatel

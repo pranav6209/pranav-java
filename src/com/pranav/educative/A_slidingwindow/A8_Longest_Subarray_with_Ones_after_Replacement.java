@@ -11,8 +11,7 @@ import java.util.Map;
  * 
  *        https://leetcode.com/problems/max-consecutive-ones-iii/submissions/
  * 
- *         // time O(N) // space O(K) - as we are storing only k+1 char in
- *         hashmap
+ *         // time O(N) // space O(1) 
  *
  */
 public class A8_Longest_Subarray_with_Ones_after_Replacement {
@@ -26,9 +25,15 @@ public class A8_Longest_Subarray_with_Ones_after_Replacement {
       if (arr[window_end] == 1)
         max_one_count++;
 
+      // current window size is from windowStart to windowEnd, overall we have a maximum of 1s
+      // repeating a maximum of 'maxOnesCount' times, this means that we can have a window with
+      // 'maxOnesCount' 1s and the remaining are 0s which should replace with 1s.
+      // now, if the remaining 0s are more than 'k', it is the time to shrink the window as we
+      // are not allowed to replace more than 'k' Os
+      
       if (window_end - window_start + 1 - max_one_count > k) {
 
-        if (arr[window_start] == 1) max_one_count--;
+           if (arr[window_start] == 1) max_one_count--;
         window_start++;
 
       }
@@ -43,10 +48,11 @@ public class A8_Longest_Subarray_with_Ones_after_Replacement {
 
   public static void main(String[] args) {
     System.out.println(
-      A8_Longest_Subarray_with_Ones_after_Replacement.findLength(new int[] { 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1 }, 2));
+      A8_Longest_Subarray_with_Ones_after_Replacement.findLength
+      (new int[] { 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1 }, 2));
     System.out.println(
-      A8_Longest_Subarray_with_Ones_after_Replacement
-        .findLength(new int[] { 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1 }, 3));
+      A8_Longest_Subarray_with_Ones_after_Replacement.findLength
+     (new int[] { 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1 }, 3));
 
   }
 

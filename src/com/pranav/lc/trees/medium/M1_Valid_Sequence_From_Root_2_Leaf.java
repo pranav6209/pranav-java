@@ -9,9 +9,13 @@ import com.pranav.lc.trees.TreePrinter;
 /**
  * @author pranavpatel
  * 
+ * 
+ * better code in educative.io
  * https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/532/week-5/3315/
  * 
  * https://www.youtube.com/watch?v=Mu4b6dLfCks
+ * 
+ * 
  * 
  * 
  * time complexity O(N)

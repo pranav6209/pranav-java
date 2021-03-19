@@ -1,12 +1,14 @@
 /**
  * 
  */
-package com.pranav.educative;
+package com.pranav.educative.G_Breatdh_First_Search;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import com.pranav.TreeNode;
 
 /**
  * @author pranavpatel
@@ -21,7 +23,7 @@ import java.util.Queue;
  *  
  *
  */
-public class A2_Binary_Tree_Level_Order_Traversal2 {
+public class A2_Reverse_Level_Order_Traversal {
   public static List<List<Integer>> traverse(TreeNode root) {
 
     
@@ -71,7 +73,7 @@ public class A2_Binary_Tree_Level_Order_Traversal2 {
     root.left.left = new TreeNode(9);
     root.right.left = new TreeNode(10);
     root.right.right = new TreeNode(5);
-    List<List<Integer>> result = A2_Binary_Tree_Level_Order_Traversal2.traverse(root);
+    List<List<Integer>> result = A2_Reverse_Level_Order_Traversal.traverse(root);
     System.out.println("Level order traversal: " + result);
   }
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.educative;
+package com.pranav;
 
 /**
  * @author pranavpatel

@@ -14,6 +14,7 @@ import java.util.List;
 
 // time O(N*K) -
 // space O(N) - if we consider o/p array
+
 // more like a 2 - pointer approach
 public class A1_avg_of_all_contiguos_subarray {
 
@@ -68,12 +69,14 @@ public class A1_avg_of_all_contiguos_subarray {
 
   public static void main(String[] args) {
 
-    double[] res = findAvgIterative(new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 }, 5);
-
-    double[] result1 = findAvgSlidingWindow(new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 }, 5);
-
-    System.out.println(Arrays.toString(res));
-    System.out.println(Arrays.toString(result1));
+//    double[] res = findAvgIterative(new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 }, 5);
+//
+//    double[] result1 = findAvgSlidingWindow(new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 }, 5);
+//
+//    System.out.println(Arrays.toString(res));
+//    System.out.println(Arrays.toString(result1));
+    
+    System.out.println("p12passphrase".toCharArray());
 
   }
 

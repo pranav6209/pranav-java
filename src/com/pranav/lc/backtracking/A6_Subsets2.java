@@ -12,9 +12,9 @@ import java.util.List;
  * 
  *         https://leetcode.com/problems/subsets-ii/
  * 
- *         time complexity 0(2^N) -- where is n is total no elements in array
- *         space complexity (N) -- max no of stack in recursion call is equal to
- *         no of elements in array
+ *        Time complexity
+ *        
+ *        https://www.educative.io/courses/grokking-the-coding-interview/7npk3V3JQNr
  * 
  *         https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071
  * 

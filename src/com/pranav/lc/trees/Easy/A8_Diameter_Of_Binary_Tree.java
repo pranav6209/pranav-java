@@ -9,12 +9,12 @@ import com.pranav.lc.trees.TreePrinter;
 
 /**
  * @author pranavpatel
- * 
- *         1. Tree Traversal https://www.youtube.com/watch?v=98AGQU0z2wg 2. BFS
- *         DFS
+ *         https://leetcode.com/problems/diameter-of-binary-tree/
+ *         1. Tree Traversal https://www.youtube.com/watch?v=98AGQU0z2wg 
+ *         2. BFS DFS
  *         https://www.youtube.com/watch?v=uWL6FJhq5fM&list=RDCMUCx-kFfzekMbhODaBss-ZnsA&index=2
- *         3. Height of tree https://www.youtube.com/watch?v=_O-mK2g_jhI 4. Dia
- *         of tree https://www.youtube.com/watch?v=ey7DYc9OANo
+ *         3. Height of tree https://www.youtube.com/watch?v=_O-mK2g_jhI 
+ *         4. Dia of tree https://www.youtube.com/watch?v=ey7DYc9OANo
  *
  *
  *
@@ -30,7 +30,7 @@ public class A8_Diameter_Of_Binary_Tree {
     if (root == null)
       return 0;
     int leftSubTreeHeight = heightOfBinaryTree(root.left);
-    int rightSubTreeHeight = heightOfBinaryTree(root.left);
+    int rightSubTreeHeight = heightOfBinaryTree(root.right);
     int leftDia = diameterOfBinaryTree(root.left);
     int rightDia = diameterOfBinaryTree(root.right);
 

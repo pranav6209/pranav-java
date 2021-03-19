@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * @author pranavpatel
  * 
- * 
+ * https://leetcode.com/problems/permutation-in-string/
  * time : O(N+M) where N and M are no of characters in the string and pattern respectively
  * space :O(M) no of char is patter in the worst case the whole pattern can have distinct characters which will go into the HashMap.
   *
@@ -78,9 +78,9 @@ public class A9_Permutation_In_String {
   }
 
   public static void main(String[] args) {
-//    System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("oidbcaf", "abc"));
+  System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("oidbcaf", "abc"));
 //    System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("odicf", "dc"));
-    System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("bcdxabcdy", "bcdyabcdx"));
+//    System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("bcdxabcdy", "bcdyabcdx"));
 //    System.out.println("Permutation exist: " + A9_Permutation_In_String.findPermutation("aaacb", "abc"));
   }
 

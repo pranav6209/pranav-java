@@ -8,6 +8,8 @@ import java.util.Map;
 
 /**
  * @author pranavpatel
+ * 
+// * https://leetcode.com/problems/minimum-window-substring
  *
  */
 public class B2_Smallest_Window_Containing_SubSting {
@@ -22,7 +24,6 @@ public class B2_Smallest_Window_Containing_SubSting {
     int window_start = 0;
     int min_length = str.length() + 1;
     int sub_str_start = 0;
-    int window_end = 0;
 
     char[] pattern_array = pattern.toCharArray();
 
@@ -32,7 +33,7 @@ public class B2_Smallest_Window_Containing_SubSting {
 
     }
 
-    for (window_end = 0; window_end < str.length(); window_end++) {
+    for (int window_end = 0; window_end < str.length(); window_end++) {
 
       char right_char = str.charAt(window_end);
 
@@ -41,11 +42,16 @@ public class B2_Smallest_Window_Containing_SubSting {
         map.put(right_char, map.get(right_char) - 1);
 
         // count every matching of a character, not only when it is == 0, to cover scenarios where patterns has dups
-        // we are doing matche == pattern.length() so we have to increments with each char match not when it zero
+        // we are doing match == pattern.length() so we have to increments with each char match not when it zero
+        
+        // also in the previous examples we are doing matched == map.size() means we are matching complete character
+        // here we are doing matched == patern.length()  so we have to increment match with each map
         if (map.get(right_char) >= 0) 
           matched++;
 
       }
+      
+      // all the character is matched start decreasing window from start until we loose the match 
       while (matched == pattern.length()) {
 
         if (min_length > window_end - window_start + 1) {
@@ -75,10 +81,10 @@ public class B2_Smallest_Window_Containing_SubSting {
   }
 
   public static void main(String[] args) {
-//    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("aabdec", "abc"));
-//    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("abdabca", "abc"));
-//    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("adcad", "abc"));
-//    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("aa", "aa"));
+    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("aabdec", "abc"));
+    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("abdabca", "abc"));
+    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("adcad", "abc"));
+    System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("aa", "aa"));
     System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("bbaa", "aba"));
   }
 

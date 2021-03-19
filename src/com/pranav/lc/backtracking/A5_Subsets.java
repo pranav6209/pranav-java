@@ -12,9 +12,8 @@ import java.util.List;
  * 
  * https://leetcode.com/problems/subsets/
  * 
- * time complexity 0(2^N) -- where is n is total no elements in array
- * space complexity (N) -- max no of stack in recursion call is equal to no of elements in array
- * 
+ * Time complexity 
+ * https://www.educative.io/courses/grokking-the-coding-interview/7npk3V3JQNr
  * https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071
  * 
  * recursion tree here also in google doc
@@ -32,28 +31,30 @@ public class A5_Subsets {
     // include time complexity of sort
     Arrays.sort(nums);
 
-    dfs(res, new ArrayList<>(), 0, nums);
+    subSetRecursive(res, new ArrayList<>(), 0, nums);
 
     return res;
   }
 
-  public static void dfs(List<List<Integer>> list, List<Integer> tempList, int start, int[] nums) {
+  public static void subSetRecursive(List<List<Integer>> list, List<Integer> tempList, int start, int[] nums) {
 
-    //creating a new arrayList base on temp list as we do not want to modify templist
+    //creating a new arrayList base on temp list as we do not want to modify templist. creating a copy
+    
+    // This is O(N) operation
     list.add(new ArrayList<>(tempList));
 
     for (int i = start; i < nums.length; i++) {
 
       tempList.add(nums[i]);
       //making a recursive call from next index i+1;
-      dfs(list, tempList, i + 1, nums);
+      subSetRecursive(list, tempList, i + 1, nums);
       tempList.remove(tempList.size() - 1);
     }
 
   }
 
   public static void main(String[] args) {
-    List<List<Integer>> res = subsets(new int[] {2,3,6,7 });
+    List<List<Integer>> res = subsets(new int[] {1,2,3});
 
     for (List<Integer> nums : res) {
 
