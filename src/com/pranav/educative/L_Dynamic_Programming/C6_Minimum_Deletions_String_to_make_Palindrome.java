@@ -5,18 +5,20 @@ package com.pranav.educative.L_Dynamic_Programming;
 
 /**
  * @author pranavpatel
- * 
- *     abc-->fbc
- *      \    / 
- * 2del  \  / 1 insert
- *        bc
  */
-public class C4_Longest_Repeating_Subsequence {
 
-  private void findMDI(String s1, String s2) {
-    System.out.println(findLCSLengthBottomUp(s1, s2));
-    System.out.println("Minimum Deletion Needed:- " + (s1.length() - findLCSLengthBottomUp(s1, s2)));
-    System.out.println("Minimum Deletion Needed:- " + (s2.length() - findLCSLengthBottomUp(s1, s2)));
+
+
+// Similar problems 
+
+/*
+ * 1. Instead of deleting element like above we can insert same elements to get the palindrome.
+ * 2. Find if a string is K-Palindromic
+ */
+public class C6_Minimum_Deletions_String_to_make_Palindrome {
+
+  private int findMinimumDeletions(String s) {
+    return s.length()-findLCSLengthBottomUp(s, new StringBuilder(s).reverse().toString());
   }
 
   private int findLCSLengthBottomUp(String s1, String s2) {
@@ -47,10 +49,10 @@ public class C4_Longest_Repeating_Subsequence {
   }
 
   public static void main(String[] args) {
-    C4_Longest_Repeating_Subsequence mdi = new C4_Longest_Repeating_Subsequence();
-    mdi.findMDI("abc", "fbc");
-    mdi.findMDI("abdca", "cbda");
-    mdi.findMDI("passport", "ppsspt");
+    C6_Minimum_Deletions_String_to_make_Palindrome mdsp = new C6_Minimum_Deletions_String_to_make_Palindrome();
+    System.out.println(mdsp.findMinimumDeletions("abdbca"));
+    System.out.println(mdsp.findMinimumDeletions("cddpd"));
+    System.out.println(mdsp.findMinimumDeletions("pqr"));
   }
 
 }

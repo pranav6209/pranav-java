@@ -1,7 +1,4 @@
 
-/**
- * 
- */
 package com.pranav.educative.L_Dynamic_Programming;
 
 /**
@@ -9,7 +6,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  * 
  * https://leetcode.com/problems/shortest-common-supersequence/
  * 
- *
+ *   matrix in book
  */
 public class C3_Shortest_Common_Supersequence {
 

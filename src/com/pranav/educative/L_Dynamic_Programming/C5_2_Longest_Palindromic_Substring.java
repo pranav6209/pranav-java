@@ -7,9 +7,15 @@ package com.pranav.educative.L_Dynamic_Programming;
 /**
  * @author pranavpatel
  * 
+ * https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/xV73LEk5rx9
+ * 
  *
  */
-public class C2_Longest_Common_Substring {
+public class C5_2_Longest_Palindromic_Substring {
+  
+  public int findLonegesPalindromicSubstring(String s) {
+    return findLongestCommonSubstring(s,new StringBuilder(s).reverse().toString());
+  }
   private int findLongestCommonSubstring(String s1, String s2) {
 
     int m = s1.length();
@@ -49,9 +55,10 @@ public class C2_Longest_Common_Substring {
   }
 
   public static void main(String[] args) {
-    C2_Longest_Common_Substring lcs = new C2_Longest_Common_Substring();
-    System.out.println(lcs.findLongestCommonSubstring("abdca", "cbda"));
-    System.out.println(lcs.findLongestCommonSubstring("passport", "ppsspt"));
+    C5_2_Longest_Palindromic_Substring lcs = new C5_2_Longest_Palindromic_Substring();
+    System.out.println(lcs.findLonegesPalindromicSubstring("abdbca"));
+    System.out.println(lcs.findLonegesPalindromicSubstring("cdpdd"));
+    System.out.println(lcs.findLonegesPalindromicSubstring("pqr"));
 
   }
 }

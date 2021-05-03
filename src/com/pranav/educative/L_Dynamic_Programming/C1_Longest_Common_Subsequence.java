@@ -8,6 +8,9 @@ package com.pranav.educative.L_Dynamic_Programming;
  * @author pranavpatel
  * 
  *         https://leetcode.com/problems/longest-common-subsequence/submissions/
+ *         
+ *         matrix in book
+ *    
  *
  */
 public class C1_Longest_Common_Subsequence {

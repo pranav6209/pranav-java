@@ -10,15 +10,16 @@ import java.util.Map;
 
 /**
  * @author pranavpatel
- *          https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ *         https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ *         
+ *         https://www.youtube.com/watch?v=MW4lJ8Y0xXk&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=7&ab_channel=AdityaVerma
  * 
  *         time : O(N+M) where N and M are no of characters in the string and
- *         pattern respectively 
- *         
- *         space :O(M) no of char is patter in the worst
- *         case the whole pattern can have distinct characters which will go
- *         into the HashMap.
- *         
+ *         pattern respectively
+ * 
+ *         space :O(M) no of char is patter in the worst case the whole pattern
+ *         can have distinct characters which will go into the HashMap.
+ * 
  *         we also need O(N) space for result list
  */
 public class B1_String_Anagrams {
@@ -27,9 +28,13 @@ public class B1_String_Anagrams {
     List<Integer> resultIndices = new ArrayList<Integer>();
     Map<Character, Integer> map = new HashMap<>();
 
+    // variable that we ll keep a count of so we do not have to traverse the loop to
+    // see match
     int match = 0;
     int window_start = 0;
+    int k = pattern.length();
 
+    // creating a map from pattern
     char[] pattern_array = pattern.toCharArray();
 
     for (char ch : pattern_array) {
@@ -42,6 +47,10 @@ public class B1_String_Anagrams {
 
     for (int window_end = 0; window_end < str.length(); window_end++) {
 
+      // when we move window_end and if char is in pattern map
+
+      // 1. reduce the count in map
+      // 2. increment the match count
       char right_char = str.charAt(window_end);
 
       if (map.containsKey(right_char)) {
@@ -52,25 +61,28 @@ public class B1_String_Anagrams {
           match++;
 
       }
-      
-      
-      
-      if(match == map.size()) {
-        
-        resultIndices.add(window_start);
-      }
-      
 
-      if (window_end >= pattern.length() - 1) {
+      // when window_size is hit
+      if (window_end - window_start + 1 == k) {
 
+        // match == map.size() means all the char is matched and we have anagram
+        if (match == map.size())
+
+          resultIndices.add(window_start);
+
+        // slide the window
+
+        // 1. increase the count in map
+        // 2. decrement the match count
         char left_char = str.charAt(window_start);
 
         if (map.containsKey(left_char)) {
 
+          map.put(left_char, map.get(left_char) + 1);
+
           if (map.get(left_char) == 0)
             match--;
 
-          map.put(left_char, map.get(left_char) + 1);
         }
 
         window_start++;
