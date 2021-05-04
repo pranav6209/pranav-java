@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * @author pranavpatel
  *         https://leetcode.com/problems/find-all-anagrams-in-a-string/
- *         
+ * 
  *         https://www.youtube.com/watch?v=MW4lJ8Y0xXk&list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&index=7&ab_channel=AdityaVerma
  * 
  *         time : O(N+M) where N and M are no of characters in the string and
@@ -50,7 +50,7 @@ public class B1_String_Anagrams {
       // when we move window_end and if char is in pattern map
 
       // 1. reduce the count in map
-      // 2. increment the match count
+      // 2. if value of that char is 0 increment the match count
       char right_char = str.charAt(window_end);
 
       if (map.containsKey(right_char)) {
@@ -65,7 +65,6 @@ public class B1_String_Anagrams {
       // when window_size is hit
       if (window_end - window_start + 1 == k) {
 
-        // match == map.size() means all the char is matched and we have anagram
         if (match == map.size())
 
           resultIndices.add(window_start);
@@ -73,29 +72,27 @@ public class B1_String_Anagrams {
         // slide the window
 
         // 1. increase the count in map
-        // 2. decrement the match count
+        // 2. if the value of that char is 0 decrement the match count
         char left_char = str.charAt(window_start);
 
         if (map.containsKey(left_char)) {
-
-          map.put(left_char, map.get(left_char) + 1);
-
           if (map.get(left_char) == 0)
             match--;
-
+          map.put(left_char, map.get(left_char) + 1);
         }
-
         window_start++;
       }
 
     }
 
     return resultIndices;
+
   }
 
   public static void main(String[] args) {
     System.out.println("Permutation exist: " + B1_String_Anagrams.findStringAnagrams("ppqp", "pq"));
-    System.out.println("Permutation exist: " + B1_String_Anagrams.findStringAnagrams("abbcabc", "abc"));
+     System.out.println("Permutation exist: " +
+     B1_String_Anagrams.findStringAnagrams("abbcabc", "abc"));
   }
 
 }
