@@ -6,9 +6,8 @@ package com.pranav.code;
 import java.util.Arrays;
 
 /**
- * @author pranavpatel
- * https://www.geeksforgeeks.org/merge-sort/
- * https://www.youtube.com/watch?v=TzeBrDU-JaY&list=PL2_aWCzGMAwKedT2KfDMB9YA5DgASZb3U&index=5
+ * @author pranavpatel https://www.geeksforgeeks.org/merge-sort/
+ *         https://www.youtube.com/watch?v=TzeBrDU-JaY&list=PL2_aWCzGMAwKedT2KfDMB9YA5DgASZb3U&index=5
  * 
  *
  */
@@ -19,14 +18,16 @@ public class B_MergeSort {
   // divide the array till it has only one element, calls recursively
   public static void mergeSort(int[] a, int n) {
 
-    int mid = n / 2;
-
-    if (n < 2)
+    if (n <= 1)
       return;
 
+    int mid = n / 2;
+
+    // create new auxiliary arrays 
     int[] l = new int[mid];
     int[] r = new int[n - mid];
 
+    // copy the data into auxiliary arrays
     for (int i = 0; i < mid; i++) {
 
       l[i] = a[i];
@@ -38,14 +39,11 @@ public class B_MergeSort {
       r[j - mid] = a[j];
 
     }
-
+    
+    // call mergesort recursively on two halves 
     mergeSort(l, mid);
     mergeSort(r, n - mid);
     merge(a, l, r, mid, n - mid);
-    // System.out.println(Arrays.toString(l));
-    // System.out.println(Arrays.toString(r));
-
-    //System.out.println(Arrays.toString(a));
   }
 
   // merge two halves
@@ -82,12 +80,12 @@ public class B_MergeSort {
   }
 
   public static void main(String[] args) {
-    //int[] nums = { 12, 11, 13, 5, 6, 7 };
-    int[] nums = { 38, 27, 43, 3, 9, 82,10 };
+    // int[] nums = { 12, 11, 13, 5, 6, 7 };
+    int[] nums = { 38, 27, 43, 3, 9, 82, 10 };
 
     mergeSort(nums, 7);
-    
-    //sorted array
+
+    // sorted array
     System.out.println(Arrays.toString(nums));
 
   }

@@ -65,19 +65,21 @@ public class B1_String_Anagrams {
       // when window_size is hit
       if (window_end - window_start + 1 == k) {
 
+        // if we have match add the indices to the result
         if (match == map.size())
 
           resultIndices.add(window_start);
 
         // slide the window
 
-        // 1. increase the count in map
-        // 2. if the value of that char is 0 decrement the match count
+        
+        // 1. if the value of that char is 0 decrement the match count
+        // 2. increase the count in map
+        
         char left_char = str.charAt(window_start);
 
         if (map.containsKey(left_char)) {
-          if (map.get(left_char) == 0)
-            match--;
+          if (map.get(left_char) == 0) match--;
           map.put(left_char, map.get(left_char) + 1);
         }
         window_start++;

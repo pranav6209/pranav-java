@@ -5,24 +5,26 @@ package com.pranav.educative.A_slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * @author pranavpatel
  * 
-// * https://leetcode.com/problems/minimum-window-substring
+ *         // * https://leetcode.com/problems/minimum-window-substring
+ *         
+ *         // do not follow aditya solution here. this is much easier 
  *
  */
 public class B2_Smallest_Window_Containing_SubSting {
 
   public static String findSubstring(String str, String pattern) {
 
-    if(str.equals(pattern)) return str;
-    
+    if (str.equals(pattern))
+      return str;
+
     Map<Character, Integer> map = new HashMap<>();
 
     int matched = 0;
     int window_start = 0;
-    int min_length = str.length() + 1;
+    int min_length =Integer.MAX_VALUE;
     int sub_str_start = 0;
 
     char[] pattern_array = pattern.toCharArray();
@@ -41,17 +43,21 @@ public class B2_Smallest_Window_Containing_SubSting {
 
         map.put(right_char, map.get(right_char) - 1);
 
-        // count every matching of a character, not only when it is == 0, to cover scenarios where patterns has dups
-        // we are doing match == pattern.length() so we have to increments with each char match not when it zero
-        
-        // also in the previous examples we are doing matched == map.size() means we are matching complete character
-        // here we are doing matched == patern.length()  so we have to increment match with each map
-        if (map.get(right_char) >= 0) 
+        // count every matching of a character, not only when it is == 0, to cover
+        // scenarios where patterns has dups
+        // we are doing match == pattern.length() so we have to increments with each
+        // char match not when it zero
+
+        // also in the previous examples we are doing matched == map.size() means we are
+        // matching complete character
+        // here we are doing matched == patern.length() so we have to increment match
+        // with each map
+        if (map.get(right_char) >= 0)
           matched++;
 
       }
-      
-      // all the character is matched start decreasing window from start until we loose the match 
+
+      // all the character is matched start decreasing window from start until we loose the match
       while (matched == pattern.length()) {
 
         if (min_length > window_end - window_start + 1) {
@@ -64,7 +70,11 @@ public class B2_Smallest_Window_Containing_SubSting {
         char left_char = str.charAt(window_start);
 
         if (map.containsKey(left_char)) {
-
+          // note that we could have redundant matching characters, therefore we'll decrement the
+          // matched count only when a useful occurrence of a matched character is going out of the window
+          // let's say pattern have only one 'a' and in a string if we have 2 'a' we can get rid of one.
+          // only when count is 0 we have a perfect match and we do not want to remove.
+          
           if (map.get(left_char) == 0)
             matched--;
 
@@ -77,8 +87,9 @@ public class B2_Smallest_Window_Containing_SubSting {
 
     }
 
-    return min_length > str.length() ? "" : str.substring(sub_str_start, sub_str_start+min_length);
+    return min_length > str.length() ? "" : str.substring(sub_str_start, sub_str_start + min_length);
   }
+
 
   public static void main(String[] args) {
     System.out.println(B2_Smallest_Window_Containing_SubSting.findSubstring("aabdec", "abc"));

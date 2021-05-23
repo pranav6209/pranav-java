@@ -9,8 +9,8 @@ import java.util.Map;
 /**
  * @author pranavpatel
  * 
- * problem is same as below but here they are taking integer array instead
- * https://leetcode.com/problems/fruit-into-baskets/
+ *         problem is same as below but here they are taking integer array
+ *         instead https://leetcode.com/problems/fruit-into-baskets/
  * 
  * 
  *
@@ -22,47 +22,45 @@ public class A5_Fruit_into_baskets {
   // space O(K) - as we are storing only k+1 char in hashmap
   public static int findLength(char[] arr) {
 
-    int longest_sub_string_length_so_far = 0;
-    int current_sub_string_length = 0;
-    int windowStart = 0;
+    int max_length = Integer.MIN_VALUE;
+    int window_start = 0;
 
     Map<Character, Integer> map = new HashMap<>();
 
-    for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    for (int window_end = 0; window_end < arr.length; window_end++) {
+      char rightChar = arr[window_end];
+      map.put(rightChar, map.getOrDefault(rightChar, 0) + 1);
 
-      map.put(arr[windowEnd], map.getOrDefault(arr[windowEnd], 0) + 1);
+      if (map.size() == 2) {
 
-      // if (map.containsKey(arr[windowEnd])) {
-      //
-      // map.put(arr[windowEnd], map.get(arr[windowEnd]) + 1);
-      //
-      // } else {
-      // map.put(arr[windowEnd], 1);
-      // }
-
-      // shrink the sliding window, until we are left with 'k' distinct characters in
-      // the frequency map
-      while (map.size() > 2) {
-
-        // update the map count of the char going out
-        map.put(arr[windowStart], map.get(arr[windowStart]) - 1);
-
-        // if char value is 0 remove it from map
-        if (map.get(arr[windowStart]) == 0) {
-          map.remove(arr[windowStart]);
-        }
-
-        windowStart++;
+        max_length = Math.max(max_length, window_end - window_start + 1);
 
       }
 
-      // remember the maximum length so far
-      current_sub_string_length = windowEnd - windowStart + 1;
-      longest_sub_string_length_so_far = Math.max(longest_sub_string_length_so_far, current_sub_string_length);
+      // shrink the sliding window, until we are left with 'k' distinct characters in
+      // the frequency map
 
+      else if (map.size() > 2) {
+        while (map.size() > 2) {
+          char leftChar = arr[window_start];
+
+          // update the map count of the char going out
+          map.put(leftChar, map.get(leftChar) - 1);
+
+          // if char value is 0 remove it from map
+          if (map.get(leftChar) == 0) {
+            map.remove(leftChar);
+          }
+
+          window_start++;
+        }
+      }
+      // to cover the scenarios of i/p [0] o/p 1 and i/p [1,1] o/p 2
+      // when window size is not his still we want to calculate max_length
+      max_length = Math.max(max_length, window_end - window_start + 1);
     }
 
-    return longest_sub_string_length_so_far;
+    return max_length;
   }
 
   public static void main(String[] args) {

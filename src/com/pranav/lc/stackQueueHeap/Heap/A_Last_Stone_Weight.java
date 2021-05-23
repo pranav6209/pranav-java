@@ -42,25 +42,6 @@ public class A_Last_Stone_Weight {
 
   }
 
-  public static void testQueue() {
-
-    Stack<Integer> stack = new Stack<>();
-    
-    stack.push(1);
-    stack.peek();
-    stack.pop();
-    stack.isEmpty();
-    
-    
-    Queue<Integer> queue = new LinkedList<>();
-    
-    
-    queue.add(5); 
-    queue.peek();
-    queue.remove();
-    queue.isEmpty();
-  }
-
   public static void main(String[] args) {
 
     int[] stones = { 2, 7, 4, 1, 8, 1 };

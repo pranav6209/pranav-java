@@ -14,11 +14,12 @@ import java.util.PriorityQueue;
  */
 public class A1_Top_K_Numbers {
 
-  public static List<Integer> findKLargestNumbers(int[] nums, int k) {
+  public static List<Integer> findKLargestNumbers1(int[] nums, int k) {
 
     // creates a PQ keeping root at min.
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
-    //PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(Comparator.naturalOrder());
+    // PriorityQueue<Integer> minHeap = new
+    // PriorityQueue<Integer>(Comparator.naturalOrder());
 
     for (int i = 0; i < k; i++) {
 
@@ -39,11 +40,30 @@ public class A1_Top_K_Numbers {
     return new ArrayList<>(minHeap);
   }
 
+  public static List<Integer> findKLargestNumbers2(int[] nums, int k) {
+
+    // creates a PQ keeping root at min.
+    PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+    // PriorityQueue<Integer> minHeap = new
+    // PriorityQueue<Integer>(Comparator.naturalOrder());
+
+    for (int i = 0; i < nums.length; i++) {
+
+      minHeap.add(nums[i]);
+
+      if (minHeap.size() > k) {
+        minHeap.poll();
+      }
+    }
+
+    return new ArrayList<>(minHeap);
+  }
+
   public static void main(String[] args) {
-    List<Integer> result = A1_Top_K_Numbers.findKLargestNumbers(new int[] { 3, 1, 5, 12, 2, 11 }, 3);
+    List<Integer> result = A1_Top_K_Numbers.findKLargestNumbers2(new int[] { 3, 1, 5, 12, 2, 11 }, 3);
     System.out.println("Here are the top K numbers: " + result);
 
-    result = A1_Top_K_Numbers.findKLargestNumbers(new int[] { 5, 12, 11, -1, 12 }, 3);
+    result = A1_Top_K_Numbers.findKLargestNumbers2(new int[] { 5, 12, 11, -1, 12 }, 3);
     System.out.println("Here are the top K numbers: " + result);
   }
 
