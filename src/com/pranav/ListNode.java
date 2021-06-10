@@ -17,4 +17,13 @@ public class ListNode {
     this.value = value;
 
   }
+
+  public static void print(ListNode head) {
+
+    while (head != null) {
+      System.out.println(head.value);
+      head = head.next;
+
+    }
+  }
 }
