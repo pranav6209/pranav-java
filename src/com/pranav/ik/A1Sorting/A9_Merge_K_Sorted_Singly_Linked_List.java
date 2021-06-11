@@ -5,16 +5,19 @@ package com.pranav.ik.A1Sorting;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 import com.pranav.ListNode;
 
 /**
  * @author pranavpatel
+ * 
+ * preffer solution with heap. but look at the code for merging 2 linked list 
  *
  */
 public class A9_Merge_K_Sorted_Singly_Linked_List {
 
-  public static ListNode merge_k_lists(List<ListNode> lists) {
+  public static ListNode merge_k_lists_divide_conquer(List<ListNode> lists) {
     if (lists == null || lists.isEmpty()) {
       return null;
     }
@@ -24,15 +27,15 @@ public class A9_Merge_K_Sorted_Singly_Linked_List {
   }
 
   public static ListNode mergeKLists(List<ListNode> lists, int start, int end) {
-    
-    
-    //base case -1 if start == end 
-    
+
+    // base case -1 if start == end
+
     if (start == end) {
       return lists.get(start);
     }
-    
-    if(start>end) return null;
+
+    if (start > end)
+      return null;
 
     int mid = start + (end - start) / 2;
 
@@ -43,28 +46,58 @@ public class A9_Merge_K_Sorted_Singly_Linked_List {
 
   private static ListNode mergeSinglyLinkedListNode(ListNode l1, ListNode l2) {
 
-    ListNode res = new ListNode(-1);
-    ListNode dummy = res;
+    ListNode temp = new ListNode(-1);
+    ListNode res = temp;
 
     while (l1 != null && l2 != null) {
 
       if (l1.value < l2.value) {
-        res.next = l1;
+        temp.next = l1;
         l1 = l1.next;
       } else {
-        res.next = l2;
+        temp.next = l2;
         l2 = l2.next;
       }
-      res = res.next;
+      temp = temp.next;
     }
 
     if (l1 != null)
-      res.next = l1;
+      temp.next = l1;
     else
-      res.next = l2;
+      temp.next = l2;
 
-    return dummy.next;
+    return res.next;
 
+  }
+
+  // 
+  public static ListNode merge_k_lists_heap(List<ListNode> lists) {
+
+    if (lists.isEmpty())
+      return null;
+
+    // minHeap with listnode values
+    PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>((n1, n2) -> n1.value - n2.value);
+
+    // add all the list head into heap.(val and next-pointer to next node)
+    for (int i = 0; i < lists.size(); i++) {
+      minHeap.add(lists.get(i));
+    }
+
+    ListNode temp = new ListNode(-1);
+    ListNode res = temp;
+
+    while (!minHeap.isEmpty()) {
+
+      ListNode node = minHeap.poll();
+      temp.next = node;
+      temp = temp.next;
+
+      if (node.next != null)
+        minHeap.add(node.next);
+
+    }
+    return res.next;
   }
 
   public static void main(String[] args) {
@@ -86,11 +119,23 @@ public class A9_Merge_K_Sorted_Singly_Linked_List {
     list.add(l2);
     list.add(l3);
 
-    ListNode res = merge_k_lists(list);
-
+    /*
+    ListNode res = merge_k_lists_divide_conquer(list);
+   
+    System.out.println("merge_k_lists_divide_conquer");
     while (res != null) {
-      System.out.println(res.value);
+      System.out.print(res.value + ",");
+      
       res = res.next;
+    }
+    System.out.println();
+    
+    */
+    ListNode res1 = merge_k_lists_heap(list);
+    System.out.println("merge_k_lists_heap");
+    while (res1 != null) {
+      System.out.print(res1.value+",");
+      res1 = res1.next;
     }
 
   }

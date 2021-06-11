@@ -10,7 +10,7 @@ import java.util.List;
  * @author pranavpatel
  *
  */
-public class A11_Merge {
+public class PP2_Merge_Sort_Array {
   static ArrayList<Integer> merge_one_into_another(ArrayList<Integer> first, ArrayList<Integer> second) {
 
     // Write your code here.
