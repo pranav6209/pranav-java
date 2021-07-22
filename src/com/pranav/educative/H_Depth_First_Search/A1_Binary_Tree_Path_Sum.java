@@ -7,6 +7,13 @@ import com.pranav.TreeNode;
 
 /**
  * @author pranavpatel
+ * 
+ * Time : O(N) in case we have a skewed tree with. we are visiting all the node.
+ * Space : O(N) if we do not have binary tree and a skewed tree
+ * 
+ * 
+ * remember it is Binary Tree and not Binary Search Tree
+ * 
  *
  */
 public class A1_Binary_Tree_Path_Sum {

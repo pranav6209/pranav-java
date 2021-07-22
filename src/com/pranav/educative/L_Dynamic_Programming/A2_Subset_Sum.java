@@ -11,6 +11,8 @@ package com.pranav.educative.L_Dynamic_Programming;
  *         
  *         
  *         https://www.youtube.com/watch?v=UmMh7xp07kY&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=8&ab_channel=AdityaVerma
+ *         
+ *         educative for matrix
  *
  */
 public class A2_Subset_Sum {

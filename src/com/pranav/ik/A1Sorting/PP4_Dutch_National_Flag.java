@@ -19,7 +19,7 @@ import java.util.Collections;
  *         for more partition.
  *
  */
-public class PP3_Dutch_National_Flag {
+public class PP4_Dutch_National_Flag {
 
   static ArrayList<Character> dutch_flag_sort(ArrayList<Character> balls) {
     // Write your code here.

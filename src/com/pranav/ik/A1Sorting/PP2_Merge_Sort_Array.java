@@ -4,63 +4,84 @@
 package com.pranav.ik.A1Sorting;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author pranavpatel
  *
  */
 public class PP2_Merge_Sort_Array {
-  static ArrayList<Integer> merge_one_into_another(ArrayList<Integer> first, ArrayList<Integer> second) {
-
+  static ArrayList<Integer> merge_sort(ArrayList<Integer> arr) {
     // Write your code here.
+    helper(arr, 0, arr.size() - 1);
+    return arr;
 
-    int i = first.size() - 1;
-    int j = first.size() - 1;
-    int pos = second.size() - 1;
+  }
 
-    System.out.println(i);
-    System.out.println(j);
-    System.out.println(pos);
+  static void helper(ArrayList<Integer> arr, int start, int end) {
 
-    while (i >= 0 && j >= 0) {
+    // base case.
 
-      if (first.get(i) > second.get(j)) {
+    // we do not want to process same element start == end start >= end
 
-        second.set(pos, first.get(i));
-        i--;
+    if (start >= end)
+      return;
 
-      } else {
+    // divide more like (start + (end - start)) / 2;
+    int mid = start + (end - start) / 2;
 
-        second.set(pos, second.get(j));
-        j--;
+    helper(arr, start, mid);
+    helper(arr, mid + 1, end);
+
+    // merge
+
+    // size of the existing array end-start+1 is a size
+    int[] aux = new int[end - start + 1];
+
+    int i = start;
+    int j = mid + 1;
+    int k = 0;
+
+    while (i <= mid && j <= end) {
+
+      // to maintain stability combining <= look at the notes
+      if (arr.get(i) <= arr.get(j)) {
+        aux[k] = arr.get(i);
+        i++;
+        k++;
+      } else {// arr.get(i) > arr.get(j)
+        aux[k] = arr.get(j);
+        j++;
+        k++;
       }
-
-      pos--;
-
-    }
-    while (i >= 0) {
-      second.set(pos, first.get(i));
-      i--;
-      pos--;
     }
 
-    return second;
+    //either one of this will execute. one array will hit the end and then process other array 
+    while (i <= mid) {
+      aux[k] = arr.get(i);
+      i++;
+      k++;
+    }
+
+    while (j <= end) {
+      aux[k] = arr.get(j);
+      j++;
+      k++;
+    }
+
+    // copy aux array back into original array
+    for (int p = 0; p < aux.length; p++) {
+      arr.set(start, aux[p]);
+      start++;
+    }
   }
-
+  
   public static void main(String[] args) {
-    ArrayList<Integer> first = new ArrayList<>();
-    first.add(1);
-    first.add(3);
-    first.add(5);
-
-    ArrayList<Integer> second = new ArrayList<>();
-    second.add(2);
-    second.add(4);
-    second.add(6);
-    second.add(0);
-    second.add(0);
-    second.add(0);
-    System.out.println(merge_one_into_another(first, second));
+    ArrayList<Integer> list = new ArrayList<>();
+    list.add(5);
+    list.add(7);
+    list.add(3);
+    list.add(2);
+    System.out.println(merge_sort(list));
   }
+
 }

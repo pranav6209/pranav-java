@@ -44,7 +44,8 @@ public class A1_Knapsack {
       return 0;
 
     int n = profits.length;
-    // [index][capacity]
+    
+    // base case
     int[][] dp = new int[n][capacity + 1];
 
     // populate the capacity=0 columns, with '0' capacity we have '0' profit
@@ -69,9 +70,16 @@ public class A1_Knapsack {
         // int profit1 = 0, profit2 = 0;
 
         if (weights[i] <= c)
-          // include the item, if it is not more than the capacity
+          
+          // if weight is less than or equal to capacity -- we have a choice of include it or exclude it 
+          // and we ll choose max from that option 
+          
+          // if we include the item, subtract its weight
+          
           // dp[i - 1][c - weights[i]] as we do not want to include the same weight in
           // knapsack
+          
+          // if the weigh is 
           dp[i][c] = Math.max(dp[i - 1][c], profits[i] + dp[i - 1][c - weights[i]]);
         // exclude the item
         else

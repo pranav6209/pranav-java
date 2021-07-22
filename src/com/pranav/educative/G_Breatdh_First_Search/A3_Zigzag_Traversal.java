@@ -4,6 +4,7 @@
 package com.pranav.educative.G_Breatdh_First_Search;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -35,7 +36,7 @@ public class A3_Zigzag_Traversal {
       return result;
 
     Queue<TreeNode> queue = new LinkedList<>();
-    int height = 0;
+    boolean flip = false;
 
     // inserts the specified element into this queue if it is possible to do so
     // immediately without violating capacity restrictions.
@@ -56,21 +57,19 @@ public class A3_Zigzag_Traversal {
         // is empty.
         TreeNode currentNode = queue.poll();
 
-        if (height % 2 == 0) {
-          currentList.add(currentNode.val);
-        } else {
-          currentList.add(0,currentNode.val);
-        }
+        currentList.add(currentNode.val);
 
         if (currentNode.left != null)
           queue.offer(currentNode.left);
         if (currentNode.right != null)
           queue.offer(currentNode.right);
       }
-
+      if (flip) {
+        Collections.reverse(currentList);
+      }
       result.add(currentList);
-      
-      height++;
+
+      flip = !flip;
 
     }
 

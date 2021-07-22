@@ -75,6 +75,8 @@ public class A3_Equal_Subset_Sum_Partition {
 
       }
     }
+    
+   // System.out.println(dp);
     return dp[n - 1][sum];
   }
 
@@ -82,11 +84,13 @@ public class A3_Equal_Subset_Sum_Partition {
     A3_Equal_Subset_Sum_Partition ps = new A3_Equal_Subset_Sum_Partition();
     int[] num = { 1, 2, 3, 4 };
     System.out.println(ps.canPartition(num));
-    num = new int[] { 1, 1, 3, 4, 7 };
+    
+   /* num = new int[] { 1, 1, 3, 4, 7 };
     System.out.println(ps.canPartition(num));
     num = new int[] { 2, 3, 4, 6 };
     System.out.println(ps.canPartition(num));
     num = new int[] { 1, 5, 3 };
     System.out.println(ps.canPartition(num));
+    */
   }
 }

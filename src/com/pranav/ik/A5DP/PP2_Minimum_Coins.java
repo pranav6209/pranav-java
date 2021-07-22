@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pranav.educative.L_Dynamic_Programming;
+package com.pranav.ik.A5DP;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  *         https://leetcode.com/problems/coin-change/
  *
  */
-public class B4_Coin_Change2 {
+public class PP2_Minimum_Coins {
   public int countChange(int[] denominations, int total) {
     int n = denominations.length;
     int[][] dp = new int[n][total + 1];
@@ -74,7 +74,7 @@ public class B4_Coin_Change2 {
 }
 
   public static void main(String[] args) {
-    B4_Coin_Change2 cc = new B4_Coin_Change2();
+    PP2_Minimum_Coins cc = new PP2_Minimum_Coins();
     int[] denominations = { 8,10,3,7,9,1,2 };
     // System.out.println(cc.countChange(denominations, 5));
     // System.out.println(cc.countChange(denominations, 11));

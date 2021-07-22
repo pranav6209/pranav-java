@@ -23,22 +23,22 @@ public class A4_String_Permutation_By_Changing_Case {
   public static List<String> letterCasePermutation(String S) {
 
     List<String> ans = new ArrayList<>();
-    dfs(ans, 0, S.toCharArray());
+    helper(ans, 0, S.toCharArray());
     return ans;
 
   }
 
-  public static void dfs(List<String> res, int index, char[] S) {
+  private static void helper(List<String> res, int index, char[] S) {
     if (index == S.length)
       res.add(new String(S));
     else {
       if (Character.isLetter(S[index])) { // If it's letter
         S[index] = Character.toUpperCase(S[index]);
-        dfs(res, index + 1, S); // Upper case branch
+        helper(res, index + 1, S); // Upper case branch
         S[index] = Character.toLowerCase(S[index]);
-        dfs(res, index + 1, S); // Lower case branch
+        helper(res, index + 1, S); // Lower case branch
       } else
-        dfs(res, index + 1, S);
+        helper(res, index + 1, S);
     }
   }
 

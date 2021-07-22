@@ -19,17 +19,17 @@ import java.util.List;
  */
 public class A3_Letter_Combination_Of_A_Phone_Number {
 
-  public static List<String> letterCombinations(String digits) {
+  public static List<String> letterCombinations(String phoneNumber) {
     List<String> result = new ArrayList<String>();
 
-    if (digits == null || digits.length() == 0) {
+    if (phoneNumber == null || phoneNumber.length() == 0) {
       return result;
     }
 
     // ask that do they want to store map with array or map
     String[] mapping = { "0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 
-    dfs(result, digits, "", 0, mapping);
+    dfs(result, phoneNumber, "", 0, mapping);
 
     return result;
   }

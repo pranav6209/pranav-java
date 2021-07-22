@@ -29,21 +29,21 @@ public class B2_Palindrome_Partitioning {
     return res;
   }
 
-  private static void dfs(List<List<String>> list, List<String> tempList, String str, int start) {
+  private static void dfs(List<List<String>> res, List<String> slate, String str, int idx) {
     // str.length() not -1, to include last  char of String see recursion tree
-    if (start == str.length()) {
-      list.add(new ArrayList<>(tempList));
+    if (idx == str.length()) {
+      res.add(new ArrayList<>(slate));
     }
 
-    for (int i = start; i < str.length(); i++) {
+    for (int i = idx; i < str.length(); i++) {
 
-      String tempString = str.substring(start, i + 1);
+      String tempString = str.substring(idx, i + 1);
 
       if (isPlalindrome(tempString)) {
 
-        tempList.add(tempString);
-        dfs(list, tempList, str, i + 1);
-        tempList.remove(tempList.size() - 1);
+        slate.add(tempString);
+        dfs(res, slate, str, i + 1);
+        slate.remove(slate.size() - 1);
       }
 
     }

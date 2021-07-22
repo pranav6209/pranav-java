@@ -12,27 +12,20 @@ public class A_SelectionSort {
   public static int[] selectionSort(int[] nums) {
 
     // here i is maintained for swapping
-    int i = 0;
-    while (i < nums.length) {
+    for (int i = 0; i < nums.length; i++) {
 
       // get the index of the minimum element, initiate believing min_index is at i
-      int min_indx = i;
+      // int min_indx = i;
       // iterate through all the elements of array starting from i+1 and then find the
       // minimum element in the array
       for (int j = i + 1; j < nums.length; j++) {
-        if (nums[j] < nums[min_indx]) {
+        if (nums[j] < nums[i]) {
 
-          min_indx = j;
+          int temp = nums[i];
+          nums[i] = nums[j];
+          nums[j] = temp;
         }
       }
-
-      // once we got the min swap it
-      int temp = nums[i];
-      nums[i] = nums[min_indx];
-      nums[min_indx] = temp;
-
-      System.out.println(Arrays.toString(nums));
-      i++;
     }
 
     return nums;
