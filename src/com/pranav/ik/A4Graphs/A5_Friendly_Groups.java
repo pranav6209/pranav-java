@@ -86,7 +86,7 @@ public class A5_Friendly_Groups {
       }
  
     }
-    // no odd length cycle found so return true 
+    // no cycle found means it is a tree and trees are bipartite return true 
     return true;
     
   }

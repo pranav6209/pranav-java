@@ -51,8 +51,6 @@ public class A3_Count_Connected_Components_In_Undirected_Graph {
     
     //System.out.println("adjList"+adjList);
 
-    // graph built
-
     // part - 3 outer loop
     
     visited = new int[n];
@@ -80,13 +78,14 @@ public class A3_Count_Connected_Components_In_Undirected_Graph {
     while (!queue.isEmpty()) {
       int currentVertex = queue.poll();
       // check neighbor
-      for (int neighbour : adjList.get(currentVertex)) {
+      for (int neighbor : adjList.get(currentVertex)) {
 
-        if (visited[neighbour] == -1) {
+        // only visit neighbors if it is not visited
+        if (visited[neighbor] == -1) {
           // mark visited
-          visited[neighbour] = 1;
+          visited[neighbor] = 1;
           // add to queue
-          queue.offer(neighbour);
+          queue.offer(neighbor);
         }
       }
     }

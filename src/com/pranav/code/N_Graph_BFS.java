@@ -13,10 +13,11 @@ import java.util.Queue;
  * @author pranavpatel 
  * 2- main operations 
  * 1. push and pop O(1) operation for n nodes O(N) 
- * 2. looking at all the neighbor sum of O(Degree) which is
- *    equal to 2m (2 times no of edges as each node will be viewed twice
- *    for undirected graph) = O(m) 
- * Total time complexity : O(M+N) Total
+ * 2. looking at all the neighbors . sum of the degree for all the vertices
+ * in undirected graph is 2 times the Edges as each node will be viewed twice
+ *  = O(2m) = O(m) 
+ * Total time complexity : O(M+N) Total  M = edges and N = vertex
+ * 
  * space complexity : O(N) size of the queue if the source vertex is
  *                    connected to all other vertices of the graph
  * 

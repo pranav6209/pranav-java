@@ -17,7 +17,7 @@ import java.util.Queue;
  */
 public class A2_Search_Largest_Island {
 
-  private static int maxIslandSize =  0;
+  private static int maxIslandSize = Integer.MIN_VALUE;
   static int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
   public static int max_island_size(List<List<Integer>> matrix) {
  

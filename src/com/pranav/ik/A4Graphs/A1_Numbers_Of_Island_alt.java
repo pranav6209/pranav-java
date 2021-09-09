@@ -13,11 +13,13 @@ import java.util.Queue;
  * 
  *         implicit representation of edges. look at the live class notes
  *         here we are counting no of components
+ *         
+ *         follow this approach 
  */
 
 
 public class A1_Numbers_Of_Island_alt {
-  static int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 }, { -1, -1 }, { 1, -1 }, { 1, 1 }, { -1, 1 } };
+  static int[][] directions = new int [][] { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 }, { -1, -1 }, { 1, -1 }, { 1, 1 }, { -1, 1 } };
   public static int count_islands(List<List<Integer>> matrix) {
     
     int m = matrix.size();
@@ -82,6 +84,53 @@ public class A1_Numbers_Of_Island_alt {
     }
 
     return neighbors;
+  }
+  
+  public static void main(String[] args) {
+    List<List<Integer>> ip = new ArrayList<>();
+
+    List<Integer> l1 = new ArrayList<>();
+    l1.add(1);
+    l1.add(1);
+    l1.add(0);
+    l1.add(0);
+    l1.add(0);
+    ip.add(l1);
+
+    List<Integer> l2 = new ArrayList<>();
+    l2.add(0);
+    l2.add(1);
+    l2.add(0);
+    l2.add(0);
+    l2.add(1);
+    ip.add(l2);
+
+    List<Integer> l3 = new ArrayList<>();
+    l3.add(1);
+    l3.add(0);
+    l3.add(0);
+    l3.add(1);
+    l3.add(1);
+    ip.add(l3);
+
+    List<Integer> l4 = new ArrayList<>();
+    l4.add(0);
+    l4.add(0);
+    l4.add(0);
+    l4.add(0);
+    l4.add(0);
+    ip.add(l4);
+
+    List<Integer> l5 = new ArrayList<>();
+    l5.add(1);
+    l5.add(0);
+    l5.add(1);
+    l5.add(0);
+    l5.add(1);
+    ip.add(l5);
+
+    System.out.println(count_islands(ip));
+
   }
 
 }

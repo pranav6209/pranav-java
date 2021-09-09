@@ -19,7 +19,7 @@ public class M_Tree_BFS {
     public TreeNode right_ptr;
   }
 
-  public static List<Integer> level_order_traversal(TreeNode root) {
+  public static List<Integer> bfs(TreeNode root) {
 
     List<Integer> res = new ArrayList<>();
 

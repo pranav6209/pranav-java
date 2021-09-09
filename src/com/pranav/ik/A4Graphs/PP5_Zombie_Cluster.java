@@ -44,7 +44,6 @@ public class PP5_Zombie_Cluster {
     while (!queue.isEmpty()) {
       int cur = queue.poll();
       // more like checking each column with an adjacency list
-      // 
       for (int j = 0; j < zombies.size(); j++) {
         if (visited[j] == false && zombies.get(cur).charAt(j) == '1') {
           visited[j] = true;

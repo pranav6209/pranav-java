@@ -12,6 +12,8 @@ import java.util.Queue;
  *         https://leetcode.com/problems/knight-probability-in-chessboard/
  *
  */
+
+// goal here is to find shortest distance so BFS 
 public class PP2_Knights_Tour_On_Chess_Board {
   static int[][] directions = { { -1,-2 }, { -2, -1 }, { -2, 1 }, { -1, 2 }, { 1, 2 }, { 2, 1 }, { 2, -1 },{ 1, -2 } };
 
@@ -23,10 +25,11 @@ public class PP2_Knights_Tour_On_Chess_Board {
 
   private static int bfs(int rows, int cols, int start_row, int start_col, int end_row, int end_col) {
     int minMoves = 0;
-    int[][] visited = new int[rows][cols];
+    // grid is not given make one
+    int[][] grid = new int[rows][cols];
     Queue<int[]> queue = new LinkedList<>();
     queue.offer(new int[] { start_row, start_col });
-    visited[start_row][start_col] = 1;
+    grid[start_row][start_col] = 1;
 
     while (!queue.isEmpty()) {
       System.out.println(minMoves);
@@ -46,9 +49,9 @@ public class PP2_Knights_Tour_On_Chess_Board {
           if (r < 0 || c < 0 || r >= rows || c >= cols)
             continue;
 
-          if (visited[r][c] == 0) { // not visited
+          if (grid[r][c] == 0) { // not visited
             queue.offer(new int[] { r, c });
-            visited[r][c] = 1;
+            grid[r][c] = 1;
 
           }
 

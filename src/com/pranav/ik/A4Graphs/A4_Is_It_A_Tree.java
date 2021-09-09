@@ -14,11 +14,12 @@ import java.util.Queue;
  * 
  *checking 2 condition
  * 
- *1. if graph has more than 1 component not a tree 
- *2. if graph has a cycle. cross edge for BFS it is not a tree
+ *1. Graph has more than 1 component
+ *2. Graph has a cycle. cross edge for BFS in case of BFS
  *
  *
- * 2- main operations 
+ * 2- main operations
+ *  
  * 1. push and pop O(1) operation for n nodes O(N) 
  * 2. looking at all the neighbor sum of O(Degree) which is
  *    equal to 2m (2 times no of edges as each node will be viewed twice
@@ -71,8 +72,8 @@ public class A4_Is_It_A_Tree {
 
     if (component > 1) // cond -1
       return false;
-    else
-      return true; // cond -2
+    
+     return true;
   }
 
   // phase - 2 BFS
@@ -93,8 +94,7 @@ public class A4_Is_It_A_Tree {
           parent[neighbor] = currenVertex; // update the parent array
           queue.offer(neighbor);
         } else {
-          // neighbor is visited
-          // neighbor is not parent means we have a cycle - cross edge 
+          // visited neighbor is not parent means we have a cycle - cross edge 
           if (neighbor != parent[currenVertex])
             return true;
         }

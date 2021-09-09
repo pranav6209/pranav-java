@@ -60,7 +60,8 @@ public class A6_Complete_All_Courses_With_Dependencies {
       if(visited[neighbor]==-1) {
         if(dfs(neighbor)) return true;// if subordinate found cycle.
       } else {
-        // departure for the neighbor is not set means it is a back edge and it has a cycle.
+        // if visited and departure for the neighbor is not set means it is a back edge and it has a cycle.
+        // look at class note to understand
         if(departure[neighbor] == -1) return true; // if found cycle by self
       }  
     }

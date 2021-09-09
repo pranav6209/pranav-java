@@ -16,16 +16,18 @@ import java.util.Set;
  *
  */
 
+// few test cases are failing for - leaving leetcode hard ll check later
 public class TP1_Order_Of_Characters_From_Alien_Dictionary {
-  static Map<Character, HashSet<Character>> adjList = new HashMap<>();
-  static int[] visited = new int[26];
-  static int[] departure = new int[26];
-  static int[] arrival = new int[26];
-  static Set<Character> letter = new HashSet<>();
-  static int count = 0;
-  static StringBuilder sb = new StringBuilder();
 
+  static int count = 0;
+ 
   static String find_order(String[] words) {
+    
+    StringBuilder sb = new StringBuilder();
+     Map<Character, HashSet<Character>> adjList = new HashMap<>();
+     int[] visited = new int[26];
+     int[] departure = new int[26];
+     Set<Character> letter = new HashSet<>();
 
     // if we have just one word first char is a result
     if(words.length ==1 ) return String.valueOf(words[0].charAt(0));
@@ -37,6 +39,8 @@ public class TP1_Order_Of_Characters_From_Alien_Dictionary {
         
         // we want to add it to letter here to handle scenario 'g','g','g','g' we want to add it to letter 
         // and call dfs with just g and print result g
+        
+        // collect all different letter to create vertices 
         letter.add(words[i].charAt(j));
         letter.add(words[i + 1].charAt(j));
         
@@ -56,13 +60,13 @@ public class TP1_Order_Of_Characters_From_Alien_Dictionary {
       }
     }
 
-    // System.out.println("AdjList" + adjList);
-    // System.out.println("Leeters" + letter);
+     System.out.println("AdjList" + adjList);
+     System.out.println("Letters" + letter);
 
     for (Character ch : letter) {
-      // ascii value logic
+      // ascii value logic, to go to specific location in visited array
       if (visited[ch - 'a'] == 0) {
-        if (dfs(ch))
+        if (dfs(ch,sb,adjList,visited,departure))
           return new String("");
       }
     }
@@ -70,16 +74,16 @@ public class TP1_Order_Of_Characters_From_Alien_Dictionary {
   }
 
   // dfs will check if it has a cycle or not also ll construct the res
-  static boolean dfs(Character source) {
+  static boolean dfs(Character source,StringBuilder sb, Map<Character, HashSet<Character>> adjList,int[] visited,int[]departure) {
     visited[source - 'a'] = 1;
-    arrival[source - 'a'] = count++;
+    //arrival[source - 'a'] = count++;
 
     // System.out.println("source" + source);
 
     if (adjList.get(source) != null) {
       for (char neighbor : adjList.get(source)) {
         if (visited[neighbor - 'a'] == 0) {
-          if (dfs(neighbor))
+          if (dfs(neighbor,sb,adjList,visited,departure))
             return true;
         } else {
           if (departure[neighbor - 'a'] == 0) {
@@ -98,8 +102,8 @@ public class TP1_Order_Of_Characters_From_Alien_Dictionary {
 
   public static void main(String[] args) {
 
-//    String[] words = { "baa", "abcd", "abca", "cab", "cad" };
-    String[] words = { "g", "g", "g", "g" };
+    String[] words = { "baa", "abcd", "abca", "cab", "cad" };
+    //String[] words = { "g", "g", "g", "g" };
     System.out.println(find_order(words));
   }
 }

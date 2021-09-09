@@ -19,13 +19,15 @@ public class PP1_Flood_Fill {
   }
   
   
-  private static void bfs(Integer row, Integer col, Integer color, ArrayList<ArrayList<Integer>> image){
+  private static void bfs(Integer row, Integer col, Integer new_color, ArrayList<ArrayList<Integer>> image){
       
-      int old_color = image.get(row).get(col);
-      if(old_color == color) return;
+    // get the current color. if pos has a current col not visited if new visited 
+      int current_color = image.get(row).get(col);
+      if(current_color == new_color) return;
+
       Queue<int[]> queue = new LinkedList<>();
       queue.add(new int[]{row,col});
-      image.get(row).set(col,color); // mark it visited
+      image.get(row).set(col,new_color); // mark it visited
       
       while(!queue.isEmpty()){
           
@@ -43,9 +45,9 @@ public class PP1_Flood_Fill {
               if(r < 0 || c < 0 || r >= rSize || c >= cSize ) continue;
               
               // if not visited, make it visited and add it to queue.
-              if(image.get(r).get(c) == old_color){
+              if(image.get(r).get(c) == current_color){
                   
-              image.get(r).set(c,color);   
+              image.get(r).set(c,new_color);   
               queue.add(new int[]{r,c});    
                
                   
