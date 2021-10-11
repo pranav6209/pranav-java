@@ -45,13 +45,13 @@ public class A1_Binary_Tree_Level_Order {
 
     Queue<TreeNode> queue = new LinkedList<>();
 
-    queue.offer(root);
+    queue.add(root);
 
     while (!queue.isEmpty()) {
       // 1. take a snapshot at the beginning of each level and iterate over it
       // 2. create tempList to add current level element
       int levelSize = queue.size();
-      List<Integer> currentList = new ArrayList<>();
+      List<Integer> currentList = new ArrayList<>();  
 
       /*
        * when we are in the for loop 

@@ -14,7 +14,7 @@ public class I_ASCII {
     char ch1 = 'A';
     char ch2 = 'B';
 
-    int num1 = ch1;
+    int num1 = ch1; //if we just assign ch1 to num1 it will print ASCII value
     int num2 = ch2;
 
     System.out.println(num1);
@@ -37,6 +37,7 @@ public class I_ASCII {
     //https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
     System.out.println('1' - '0');
     System.out.println('2' - '0');
+    System.out.println('a' - '0');
     
     
     //Alos this

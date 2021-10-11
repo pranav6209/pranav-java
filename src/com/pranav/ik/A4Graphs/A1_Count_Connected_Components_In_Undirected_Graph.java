@@ -27,7 +27,7 @@ import java.util.Queue;
  */
 
 // dry run for a code 
-public class A3_Count_Connected_Components_In_Undirected_Graph {
+public class A1_Count_Connected_Components_In_Undirected_Graph {
 
   
   static  List<List<Integer>> adjList = new ArrayList<>();
@@ -35,7 +35,6 @@ public class A3_Count_Connected_Components_In_Undirected_Graph {
   public static int number_of_connected_components(int n, List<List<Integer>> edges) {
     // part-1 Building graph
     for (int i = 0; i < n; i++) {
-
       adjList.add(i, new ArrayList<>());
     }
 

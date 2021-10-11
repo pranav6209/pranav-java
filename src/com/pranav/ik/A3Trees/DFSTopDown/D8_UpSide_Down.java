@@ -26,13 +26,13 @@ public class D8_UpSide_Down {
    */
 
   //Top down dfs
-  private static TreeNode globalRoot = null;
+   TreeNode globalRoot = null;
 
-  static TreeNode flipUpsideDown(TreeNode root) {
+   public TreeNode upsideDownBinaryTree(TreeNode root) {
 
     if (root == null)
       return globalRoot;
-
+    // initial root doesn't have parent and right so pass null
     dfs(root, null, null);
 
     return globalRoot;
@@ -40,8 +40,8 @@ public class D8_UpSide_Down {
   
   // follow dfs template 1. process the data 2
   
-  // each node gets parent and parentRight side from above
-  private static void dfs(TreeNode node, TreeNode parent, TreeNode parentRightSide) {
+  // each node gets parent and parentRight side from above. think abt node 2 in leetcode example 1 
+  private void dfs(TreeNode node, TreeNode parent, TreeNode parentRightSide) {
 
     // 1. process the data
     TreeNode oldLeft = node.left_ptr;

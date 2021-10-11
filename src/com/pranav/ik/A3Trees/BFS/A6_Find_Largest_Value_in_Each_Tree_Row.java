@@ -29,7 +29,7 @@ public class A6_Find_Largest_Value_in_Each_Tree_Row {
     while (!queue.isEmpty()) {
 
       int levelSize = queue.size();
-      int max = Integer.MIN_VALUE;
+      int max = Integer.MIN_VALUE;// here node.val could be negative so initiate with Integer.MIN_VALUE
 
       for (int i = 0; i < levelSize; i++) {
 

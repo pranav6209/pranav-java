@@ -4,7 +4,6 @@
 package com.pranav.ik.A3Trees.DFSTopDown;
 
 // explanation 2:10:00 Tree series 2
-// Leetcode premium screenshot in note
 // top-down DFS
 public class D4_Binary_Tree_Longest_Consecutive_Sequence {
 

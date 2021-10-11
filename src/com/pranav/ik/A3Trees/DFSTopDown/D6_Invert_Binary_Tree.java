@@ -36,7 +36,7 @@ public class D6_Invert_Binary_Tree {
 
     // what if we have either left is null or right is null or both null for leaf
     
-    // in sume of the cases we might assign null value to node.left and node.right as old left
+    // in sum of the cases we might assign null value to node.left and node.right as old left
     // and oldRight might be null we are not tracking null in first 4 lines.
     // But when we ll execute recursive case it will stop
 

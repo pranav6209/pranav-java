@@ -35,17 +35,17 @@ public class B1_Max_Depth_Of_N_Ary_Tree {
   // return the farthest child from root
   public int maxDepth(Node root) {
 
-    int height = 0;
+    int depth = 0;
 
     if (root == null)
-      return height;
+      return depth;
 
     Queue<Node> queue = new LinkedList<Node>();
     queue.offer(root);
 
     while (!queue.isEmpty()) {
       // as soon as we encounter node we have to increase the counter
-      height++;
+      depth++;
       
       int levelSize = queue.size();
 
@@ -58,7 +58,7 @@ public class B1_Max_Depth_Of_N_Ary_Tree {
         }
       }
     }
-    return height;
+    return depth;
   }
 
 }

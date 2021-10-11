@@ -13,7 +13,8 @@ import java.util.List;
  *         time : input O(N) + call space
  *         
  *         In top-down DFS, as information was passed top-down from parent to child, that
-           information was packaged inside the arguments of the dfs function.
+           information was packaged inside the arguments of the dfs function(slate,sumSlate) - partial
+           solution and sub problem definition .
  *
  */
 public class D1_Print_All_Paths_Of_Tree {

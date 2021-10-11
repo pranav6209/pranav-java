@@ -54,6 +54,8 @@ public class C4_Binary_Tree_Vertical_Order_Traversal {
    * 4. keeping track of each vertlevel in a hashMap, if we vertlevel accessed before add current node to it else
    * create a new list and add it to that level
    * 
+   * if not given ask what if there is a collision at particular level, see leetcode example 2
+   * 
    * 
    * 
    */

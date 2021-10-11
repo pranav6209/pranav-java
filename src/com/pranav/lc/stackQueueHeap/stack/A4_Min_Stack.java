@@ -61,7 +61,7 @@ public class A4_Min_Stack {
   public static void main(String[] args) {
 
     A4_Min_Stack min_Stack = new A4_Min_Stack();
-
+    
     min_Stack.push(-2);
     min_Stack.push(0);
     min_Stack.push(-3);

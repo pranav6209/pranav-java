@@ -50,16 +50,19 @@ public class B7_Max_Width_Of_Binary_Tree {
   /*
   1. Store the index of children when adding them to the queue. 
   2. Store the first node of each level separately outside the "for" loop and 
-  also track the last node at each level through "node". At the end their index difference is that level's width.
+     also track the last node at each level through "node".
+     At the end their index difference is that level's width.consider we are finding a width of an array
   */
   public int widthOfBinaryTree(TreeNode root) {
     if (root == null)
       return 0;
 
-    int width = Integer.MIN_VALUE;
+    int maxWidth = Integer.MIN_VALUE;
     Queue<QueueNode> queue = new LinkedList<>();
-    queue.offer(new QueueNode(root, 1));
 
+    // root at index 1
+    queue.offer(new QueueNode(root, 1));
+    
     while (!queue.isEmpty()) {
       int levelSize = queue.size();
 
@@ -68,6 +71,8 @@ public class B7_Max_Width_Of_Binary_Tree {
 
       // this will be the last node when we traverse that level
       QueueNode currentNode = null;
+      
+      int currentLevelWidth = 0;
 
       for (int i = 0; i < levelSize; i++) {
 
@@ -81,11 +86,11 @@ public class B7_Max_Width_Of_Binary_Tree {
           queue.offer(new QueueNode(currentNode.node.right, 2 * currentNode.index + 1));
         }
       }
-
-      width = Math.max(width, currentNode.index - first.index + 1);
+      currentLevelWidth = currentNode.index - first.index + 1;
+      maxWidth = Math.max(maxWidth, currentLevelWidth);
     }
 
-    return width;
+    return maxWidth;
   }
 
 }

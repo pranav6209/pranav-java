@@ -34,8 +34,8 @@ public class D5_PathSum_3 {
     // slate has all the values from root to leaf
     slate.add(node.val);
 
-    // here we are starting from slate.size()-1 and then going till size 0.We want to count no of path that
-    // ends at this node 
+    // here in slate, starting from slate.size()-1 and then going till size 0 to check if targetSum exists.
+    // basically, We want to count no of path that ends at this node 
     // explanation 3:43:00 Tree Series 2
     
     int suffixSum = 0;
@@ -60,6 +60,6 @@ public class D5_PathSum_3 {
       DFS(node.right, slate, targetSum, res);
     }
 
-    slate.add(slate.size() - 1);
+    slate.remove(slate.size() - 1);
   }
 }

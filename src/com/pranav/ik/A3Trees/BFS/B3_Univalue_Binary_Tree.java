@@ -44,7 +44,9 @@ public class B3_Univalue_Binary_Tree {
     Queue<TreeNode> queue = new LinkedList<>();
 
     queue.offer(root);
+    
     int uniValue = root.val;
+    
     while (!queue.isEmpty()) {
       TreeNode curretNode = queue.poll();
       if (curretNode.val != uniValue)

@@ -15,22 +15,18 @@ public class E1_Symmetric_Tree {
     public TreeNode right;
   }
 
-  public boolean isSameTree(TreeNode node1, TreeNode q) {
-
-    if (node1 == null && q == null)
-      return true;
-
-    // if one of the null return false
-    if (node1 == null || q == null)
-      return false;
-
-    boolean[] res = new boolean[] { true };
-
-    dfs(node1, q, res);
-
+  public boolean isSymmetric(TreeNode root) {
+    
+    if(root == null) return true;
+    
+    boolean[] res = new boolean[]{true};
+    
+    // imp
+    dfs(root,root,res);
+    
     return res[0];
-
-  }
+    
+}
 
   private static void dfs(TreeNode p, TreeNode q, boolean[] res) {
 
@@ -39,21 +35,21 @@ public class E1_Symmetric_Tree {
 
     // if p has a left and q doesn't have left or p doesn't have left and q have
     // left in that case return fasle
-    if ((p.left != null && q.left == null) || (p.left == null && q.left != null))
+    if ((p.left != null && q.right == null) || (p.left == null && q.right != null))
       res[0] = false;
 
-    if (p.left != null && q.left != null)
+    if (p.left != null && q.right != null)
 
-      dfs(p.left, q.left, res);
+      dfs(p.left, q.right, res);
 
     // if p has a right and q doesn't have right or p doesn't have right and q have
     // right in that case return fasle
 
-    if ((p.right != null && q.right == null) || (p.right == null && q.right != null))
+    if ((p.right != null && q.left == null) || (p.right == null && q.left != null))
       res[0] = false;
 
-    if (p.right != null && q.right != null)
-      dfs(p.right, q.right, res);
+    if (p.right != null && q.left != null)
+      dfs(p.right, q.left, res);
 
   }
 }

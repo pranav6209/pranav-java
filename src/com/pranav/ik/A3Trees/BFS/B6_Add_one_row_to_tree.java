@@ -8,13 +8,6 @@ import java.util.Queue;
 
 /**
  * @author pranavpatel
- * 
- *         https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
- *
- *
- *         look at the class note
- * 
- * 
  */
 
 public class B6_Add_one_row_to_tree {
@@ -50,14 +43,14 @@ public class B6_Add_one_row_to_tree {
     if (root == null)
       return null;
 
-    int height = 0;
+    int treeDepth = 0;
     Queue<TreeNode> queue = new LinkedList<>();
 
     queue.offer(root);
 
     while (!queue.isEmpty()) {
 
-      height++;
+      treeDepth++;
 
       int levelSize = queue.size();
 
@@ -67,7 +60,7 @@ public class B6_Add_one_row_to_tree {
         // if depth 2 is given, ultimately we want to add new row at level 1
         // optimization will be once the level is added, we can stop no need to add more
         // node to queue
-        if (height == depth - 1) {
+        if (treeDepth == depth - 1) {
 
           TreeNode newLeft = new TreeNode(val);
           TreeNode newRight = new TreeNode(val);

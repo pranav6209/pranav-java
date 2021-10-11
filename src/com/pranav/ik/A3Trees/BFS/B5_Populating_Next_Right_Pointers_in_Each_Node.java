@@ -9,18 +9,6 @@ import java.util.Queue;
 /**
  * @author pranavpatel
  * 
- *         https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
- *         https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
- * 
- *         This is common solution for both the problem. Leetcode test case
- *         passes. Only difference is one if full binary tree and other is not.
- *         We do not have a special case for full binary so, solution will work
- *         for both problems
- *
- *
- *         look at the class note
- * 
- * 
  */
 
 class Node {

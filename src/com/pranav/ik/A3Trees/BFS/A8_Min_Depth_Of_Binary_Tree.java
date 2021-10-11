@@ -25,17 +25,17 @@ public class A8_Min_Depth_Of_Binary_Tree {
   public int minDepth(TreeNode root) {
 
     // initiate it 0 so root == null return it
-    int height = 0;
+    int depth = 0;
 
     if (root == null)
-      return height;
+      return depth;
 
     Queue<TreeNode> queue = new LinkedList<TreeNode>();
     queue.offer(root);
 
     while (!queue.isEmpty()) {
       // as soon as we encounter node we have to increase the counter
-      height++;
+      depth++;
       int levelSize = queue.size();
 
       for (int i = 0; i < levelSize; i++) {
@@ -43,7 +43,7 @@ public class A8_Min_Depth_Of_Binary_Tree {
         TreeNode currentNode = queue.poll();
 
         if (currentNode.left_ptr == null & currentNode.right_ptr == null)
-          return height;
+          return depth;
 
         if (currentNode.left_ptr != null)
           queue.offer(currentNode.left_ptr);
@@ -53,7 +53,7 @@ public class A8_Min_Depth_Of_Binary_Tree {
 
       }
     }
-    return height;
+    return depth;
   }
 
 }

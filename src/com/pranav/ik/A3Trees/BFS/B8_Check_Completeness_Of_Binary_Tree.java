@@ -9,12 +9,6 @@ import java.util.Queue;
 /**
  * @author pranavpatel
  * 
- *         https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
- *
- *
- *         look at the class note
- * 
- * 
  */
 
 public class B8_Check_Completeness_Of_Binary_Tree {

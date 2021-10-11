@@ -50,28 +50,28 @@ public class F7_Lonegest_UniValue_Path {
 
     if (node.left != null) {
 
-      int path = dfs(node.left, globalResult);
+      int leftPath = dfs(node.left, globalResult);
 
       // only update myLongestpath if node.val == node.left.val, as keep it zero
       if (node.val == node.left.val) {
-        myLongestpath = 1 + path;
+        myLongestpath = 1 + leftPath;
         // if there is only left subtree longestVpath for that subtree ll be only
         // myLongestpath as there is no right subtree
-        myLongestVpath = 1 + path;
+        myLongestVpath = 1 + leftPath;
       }
 
     }
 
     if (node.right != null) {
 
-      int path = dfs(node.right, globalResult);
+      int rightPath = dfs(node.right, globalResult);
 
       if (node.val == node.right.val) {
         // if there is a right subtree,myLongestpath ll be max of left and right path
-        myLongestpath = Math.max(myLongestpath, 1 + path);
+        myLongestpath = Math.max(myLongestpath, 1 + rightPath);
         // myLongestVpath path will be myLongestVpath(calculated using left + path
         // calulated using right)
-        myLongestVpath = myLongestVpath + path + 1;
+        myLongestVpath = myLongestVpath + rightPath + 1;
       }
 
     }

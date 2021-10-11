@@ -4,6 +4,7 @@
 package com.pranav.ik.A1Sorting;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class A3_C3_Attend_Meetings {
    */
   public static int can_attend_all_meetings(List<List<Integer>> intervals) {
 
-    intervals.sort((l1, l2) -> l1.get(0) - l2.get(0));
+    Collections.sort(intervals,(l1, l2) -> l1.get(0) - l2.get(0));
     
     // i < intervals.size() -1
     for (int i = 0; i < intervals.size() - 1; i++) {

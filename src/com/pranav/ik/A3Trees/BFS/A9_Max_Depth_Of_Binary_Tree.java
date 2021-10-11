@@ -24,17 +24,17 @@ public class A9_Max_Depth_Of_Binary_Tree {
   // return the farthest child from root. Just iterate through each level
   public int minDepth(TreeNode root) {
 
-    int height = 0;
+    int depth = 0;
 
     if (root == null)
-      return height;
+      return depth;
 
     Queue<TreeNode> queue = new LinkedList<TreeNode>();
     queue.offer(root);
 
     while (!queue.isEmpty()) {
 
-      height++;
+      depth++;
       int levelSize = queue.size();
 
       for (int i = 0; i < levelSize; i++) {
@@ -49,7 +49,7 @@ public class A9_Max_Depth_Of_Binary_Tree {
         }
       }
     }
-    return height;
+    return depth;
   }
 
 }

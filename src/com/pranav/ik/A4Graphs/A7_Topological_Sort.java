@@ -66,6 +66,7 @@ public class A7_Topological_Sort {
         if (dfs(neighbor, sortedOrder))
           return true;
       } else {
+        //cycle back edge
         if (departure[neighbor] == -1) {
           return true;
         }

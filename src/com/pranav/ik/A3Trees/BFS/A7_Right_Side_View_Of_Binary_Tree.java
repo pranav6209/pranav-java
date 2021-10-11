@@ -39,7 +39,10 @@ public class A7_Right_Side_View_Of_Binary_Tree {
 
       for (int i = 0; i < levelSize; i++) {
         TreeNode node = queue.poll();
+       
         // instead of appending everything just append last
+        // we can also initialize treenode at each level and keep appending it with current.last element is right
+        
         if (i == levelSize - 1) {
           res.add(node.label);
         }

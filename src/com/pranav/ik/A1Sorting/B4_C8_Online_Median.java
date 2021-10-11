@@ -49,7 +49,7 @@ public class B4_C8_Online_Median {
       // on left and minHeap on right
       if (num > median) {
         minHeap.add(num);
-        // if diff is 2 re balance
+        // if diff is 2 re balance or > 1
         if (minHeap.size() - maxHeap.size() == 2) {
           // get the top element from max heap and insert into minHeap
           maxHeap.add(minHeap.poll());

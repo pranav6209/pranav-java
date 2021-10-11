@@ -43,6 +43,7 @@ public class A1_Numbers_Of_Island_alt {
     matrix.get(row).set(col, -1); // make it visited
 
     while (!queue.isEmpty()) {
+      
       int[] current = queue.poll();
 
       int rSize = matrix.size();

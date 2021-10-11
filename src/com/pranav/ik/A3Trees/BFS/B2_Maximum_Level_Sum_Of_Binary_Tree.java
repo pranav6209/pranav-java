@@ -41,12 +41,12 @@ public class B2_Maximum_Level_Sum_Of_Binary_Tree {
    */
   public int maxLevelSum(TreeNode root) {
 
-    int height = 0;// this will keep track of height of 
+    int level = 0;// this will keep track of height of 
     int maxLevelSum = Integer.MIN_VALUE;
     int minLevel = 0;
 
     if (root == null)
-      return height;
+      return level;
 
     Queue<TreeNode> queue = new LinkedList<TreeNode>();
     queue.offer(root);
@@ -54,7 +54,7 @@ public class B2_Maximum_Level_Sum_Of_Binary_Tree {
     while (!queue.isEmpty()) {
       // as soon as we encounter node we have to increase the counter
 
-      height++;
+      level++;
       int levelSum = 0;
       int levelSize = queue.size();
 
@@ -78,7 +78,7 @@ public class B2_Maximum_Level_Sum_Of_Binary_Tree {
       // levelSum >= maxLevelSum
       if (levelSum > maxLevelSum) {
         maxLevelSum = levelSum;
-        minLevel = height;
+        minLevel = level;
       }
 
     }
