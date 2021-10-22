@@ -5,17 +5,20 @@ package com.pranav.educative.L_Dynamic_Programming;
 
 /**
  * @author pranavpatel
+
+ * watch video at 2x speed easy to understand short video
+ * https://www.youtube.com/watch?v=hbTaCmQGqLg&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=29&ab_channel=AdityaVerma
  * 
- * Matrix in note
+ * logic is we have String AABEBCDD, we ll use it twice 
  * 
- * e.g AXXXY
- * Here is the explanation:
- * Read this: Given a string, print the longest repeating subsequence such that the two subsequences don’t have same string character at same position
- * The same Position is the twist here: A X X X Y ==> 
- * X of index1 is used in both but its position in both substrings is different. In the first subsequence, it comes at 1st index whereas in 
- * the second subsequence comes at the 0th index.
+ * AABEBCDD
+ * AABEBCDD  answer is ABD
  * 
- * similar thing for fmff
+ * if s1.charAt(i - 1) == s2.charAt(j - 1)  and i!=j if char matches between 2 strings and if they are at the same index,
+ * do not consider(consider only if it is at diff index )
+ * 
+ * 
+
  */
 
 public class C7_Longest_Repeating_Subsequence {
@@ -29,15 +32,15 @@ public class C7_Longest_Repeating_Subsequence {
 
     int[][] dp = new int[m + 1][n + 1];
 
-    for (int i = 0; i < m + 1; i++) {
-      for (int j = 0; j < n + 1; j++) {
+    for (int i = 0; i <= m; i++) {
+      for (int j = 0; j < n; j++) {
         if (i == 0 || j == 0)
           dp[i][j] = 0;
       }
     }
 
-    for (int i = 1; i < m + 1; i++) {
-      for (int j = 1; j < n + 1; j++) {
+    for (int i = 1; i <= m; i++) {
+      for (int j = 1; j <= n ; j++) {
 
         if (s1.charAt(i - 1) == s2.charAt(j - 1) && i != j) {
           dp[i][j] = 1 + dp[i - 1][j - 1];
@@ -55,7 +58,10 @@ public class C7_Longest_Repeating_Subsequence {
     C7_Longest_Repeating_Subsequence lrs = new C7_Longest_Repeating_Subsequence();
     //System.out.println(lrs.findLRSLength("tomorrow"));
     //System.out.println(lrs.findLRSLength("aabdbcec"));
-    System.out.println(lrs.findLRSLength("fmff"));
+    //System.out.println(lrs.findLRSLength("fmff"));
+    
+    System.out.println(lrs.findLRSLength("AABEBCDD"));
+    
   }
 
 }

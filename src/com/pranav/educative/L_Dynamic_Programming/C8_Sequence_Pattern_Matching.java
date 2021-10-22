@@ -5,11 +5,16 @@ package com.pranav.educative.L_Dynamic_Programming;
 
 /**
  https://leetcode.com/problems/is-subsequence/
+ 
+ try to solve using 2 pointer approach from leetcode solution. that is 
+ easier then DP 
  */
 
 public class C8_Sequence_Pattern_Matching {
 
   public boolean isSubsequence(String s, String t) {
+    
+    // if the longest subsequence length is same as s, return true
     return s.length() == findLCSLengthBottomUp(s, t);
 
   }
@@ -26,8 +31,8 @@ public class C8_Sequence_Pattern_Matching {
       }
     }
 
-    for (int i = 1; i < m + 1; i++) {
-      for (int j = 1; j < n + 1; j++) {
+    for (int i = 1; i <= m ; i++) {
+      for (int j = 1; j <= n; j++) {
 
         if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
           dp[i][j] = 1 + dp[i - 1][j - 1];

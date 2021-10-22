@@ -4,8 +4,11 @@
 package com.pranav.educative.L_Dynamic_Programming;
 
 /**
- * @author pranavpatel
- *         https://leetcode.com/problems/longest-palindromic-subsequence/submissions/
+ *  Aditya verma solution at the end. it passes all the test cases. just use that approach
+ *  
+ *  for String "abdbca"  longest palindromic subsequence is abdba and its length is 5
+ *  
+ *  https://leetcode.com/problems/longest-palindromic-subsequence/submissions/
  */
 public class C5_1_Longest_Palindrominc_Subsequence {
 

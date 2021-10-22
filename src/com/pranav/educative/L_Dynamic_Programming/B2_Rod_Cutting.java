@@ -14,27 +14,27 @@ public class B2_Rod_Cutting {
       return 0;
 
     int lengthCount = lengths.length;
-    int[][] dp = new int[lengthCount][n + 1];
+    int[][] dp = new int[lengthCount+1][n + 1];
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n; i++)
       dp[i][0] = 0;
 
-    for (int len = 0; len <= n; len++) {
-      if (lengths[0] <= len)
-        dp[0][len] = prices[0] + dp[0][len - lengths[0]];
+    for (int len = 1; len <= n; len++) {
+      dp[0][len] = 0;
+      
     }
 
     // process all rod lengths for all prices
-    for (int i = 1; i < lengthCount; i++) {
+    for (int i = 1; i <= lengthCount; i++) {
       for (int len = 1; len <= n; len++) {
-        if (lengths[i] <= len)
-          dp[i][len] = Math.max(dp[i - 1][len], prices[i] + dp[i][len - lengths[i]]);
+        if (lengths[i-1] <= len)
+          dp[i][len] = Math.max(dp[i - 1][len], prices[i-1] + dp[i][len - lengths[i-1]]);
         else
           dp[i][len] = dp[i - 1][len];
       }
     }
     // maximum price will be at the bottom-right corner.
-    return dp[lengthCount - 1][n];
+    return dp[lengthCount][n];
 
   }
 

@@ -46,38 +46,44 @@ public class A3_Equal_Subset_Sum_Partition {
   }
 
   public boolean subSetSum(int[] nums, int sum) {
-
     int n = nums.length;
 
-    boolean[][] dp = new boolean[n][sum + 1];
+    boolean[][] dp = new boolean[n + 1][sum + 1];
 
-    // it is always possible to get 0 sum with an empty set. Initialize col-1 with
-    // true
-    for (int i = 0; i < nums.length; i++)
+    // it is always possible to get 0 sum with an empty subset
+    // initialize first col with true
+    for (int i = 0; i <= n; i++)
+
       dp[i][0] = true;
 
-    // initialize first row with below conditions.
-    for (int s = 1; s <= sum; s++) {
-      dp[0][s] = nums[0] == s ? true : false;
-    }
+    // with empty array we can only achieve sum 0 so keeping j = 0 true which was
+    // set in above for loop and then set remaining to false first row false except (0,0)
+    for (int j = 1; j <= sum; j++)
+      dp[0][j] = false;
 
     // remaining cells logic
-    for (int i = 1; i < n; i++) {
-      for (int s = 1; s <= sum; s++) {
-        // if nums[i] is smaller, we have an option to include or exclude
-        // and either of is true we want to fill true.
-        if (nums[i] <= s) {
-          dp[i][s] = dp[i - 1][s - nums[i]] || dp[i - 1][s];
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= sum; j++) {
+        // include the current index number and exclude it(choice diagram). In either of
+        // the scenarios
+        // if we get true, we can form a subset with those numbers.
+
+        // this is similar like 0/1 knapsack where we do Math.max(profit1,profit2)
+        // since we are filling matrix here with boolean, we can do or condition
+        // means excluding or including number either is true return true. see video.
+
+        // num[i-1] at index 1 we have 0th index value
+        if (nums[i-1] <= j) {
+          dp[i][j] = dp[i - 1][j - nums[i-1]] || dp[i - 1][j];
         } else {
           // else exclude the no and fill current cell.
-          dp[i][s] = dp[i - 1][s];
+          dp[i][j] = dp[i - 1][j];
         }
 
       }
     }
-    
-   // System.out.println(dp);
-    return dp[n - 1][sum];
+
+    return dp[n][sum];
   }
 
   public static void main(String[] args) {

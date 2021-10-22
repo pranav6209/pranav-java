@@ -7,43 +7,51 @@ package com.pranav.educative.L_Dynamic_Programming;
  * @author pranavpatel
  * 
  * https://leetcode.com/problems/coin-change-2/
+ * 
+ * we have a choice to include/exclude so knapsack and we can 
+ * use same coin multiple same time so unbounded 
+ * 
+ * when we have asked for count  or no of ways '+' between 2 choices.
+ * when min or max, min max between 2 choices 
  *
  */
 public class B3_Coin_Change {
   public int countChange(int[] denominations, int total) {
 
     int n = denominations.length;
-    int[][] dp = new int[n][total + 1];
+    int[][] dp = new int[n+1][total + 1];
     
     // to pass leetcode tests
     if(n == 0 && total==0) return 1;
     
     if(n==0 && total > 0 ) return 0;
 
-    for (int i = 0; i < n; i++) {
+    // possible get 0 total with empty array so initialize with 1 
+    for (int i = 0; i <= n; i++) {
 
       dp[i][0] = 1;
     }
 
-    for (int t = 0; t <= total; t++) {
-      // here if 0th index denomination is less than total we can use it
-      // multiple time so considering each sub array.
-      if (denominations[0] <= t) {
-        dp[0][t] = dp[0][t - denominations[0]];
-      }
+    // with empty array, we can not achieve any sum so initialize with 0 
+    for (int t = 1; t <= total; t++) {
+
+      
+      dp[0][t] = 0;
+      
     }
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
       for (int t = 1; t <= total; t++) {
-
-        if (denominations[i] <= t)
-          dp[i][t] = dp[i - 1][t] + dp[i][t - denominations[i]];
+        
+        // include /exclude choices
+        if (denominations[i-1] <= t)
+          dp[i][t] = dp[i - 1][t] + dp[i][t - denominations[i-1]];
         else
           dp[i][t] = dp[i - 1][t];
 
       }
     }
-    return dp[n - 1][total];
+    return dp[n][total];
   }
 
   public static void main(String[] args) {

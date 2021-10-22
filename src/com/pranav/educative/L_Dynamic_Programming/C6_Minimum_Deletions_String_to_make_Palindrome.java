@@ -3,17 +3,12 @@
  */
 package com.pranav.educative.L_Dynamic_Programming;
 
-/**
- * @author pranavpatel
- */
-
-
-
-// Similar problems 
-
 /*
- * 1. Instead of deleting element like above we can insert same elements to get the palindrome.
- * 2. Find if a string is K-Palindromic
+ * To get the minimum no of deletion, we have to find length of 
+ * longest palindromic subsequence and then subtract it from 
+ * original string 
+ * for String "abdbca" longest palindromic subsequence is abdba. its length is 5
+ * and total length of string is 6. 6-5 = 1
  */
 public class C6_Minimum_Deletions_String_to_make_Palindrome {
 

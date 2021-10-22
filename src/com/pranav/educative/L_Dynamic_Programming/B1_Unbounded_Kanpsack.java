@@ -16,35 +16,29 @@ public class B1_Unbounded_Kanpsack {
       return 0;
 
     int n = profits.length;
-    int[][] dp = new int[n][capacity + 1];
+    int[][] dp = new int[n+1][capacity + 1];
 
-    // populate the capacity=0 columns
-    for (int i = 0; i < n; i++)
+    // same logic as 0/1 knapsack
+    for (int i = 0; i <= n; i++)
       dp[i][0] = 0;
 
-    /*   
- *   populate the capacity=0 columns here we are adding dp[0][c - weights[0]] unlike 0/1
- *   because we want to reuse element at index 0 and that is why we are counting 
- *   each sub array created before it.
-     */
-    for (int c = 0; c <= capacity; c++)
-      if (weights[0] <= c) {
-        dp[0][c] = profits[0] + dp[0][c - weights[0]];
-      }
+    for (int c = 1; c <= capacity; c++)
+      dp[0][c] = 0;
 
     // process all sub-arrays for all capacities
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
       for (int c = 1; c <= capacity; c++) {
-        if (weights[i] <= c)
-          // here we are not doing dp[i-1][c - weights[i]] like 0/1
-          // rather we are counting each sub array and created before it.
-          dp[i][c] = Math.max(dp[i - 1][c], profits[i] + dp[i][c - weights[i]]);
+        if (weights[i-1] <= c)
+          // only when we have choice to include, we can include the same element again so, we want to be in the same raw(to use same element) dp[i][c - weights[i-1]], 
+          // if we are excluding we do not want to include same element again. so, excluding that row dp[i-1][c] 
+          
+          dp[i][c] = Math.max(dp[i - 1][c], profits[i-1] + dp[i][c - weights[i-1]]);
         else
           dp[i][c] = dp[i - 1][c];
       }
 
     }
-    return dp[n - 1][capacity];
+    return dp[n][capacity];
 
   }
 
