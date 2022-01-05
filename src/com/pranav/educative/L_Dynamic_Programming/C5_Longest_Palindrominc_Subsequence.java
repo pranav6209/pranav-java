@@ -10,7 +10,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  *  
  *  https://leetcode.com/problems/longest-palindromic-subsequence/submissions/
  */
-public class C5_1_Longest_Palindrominc_Subsequence {
+public class C5_Longest_Palindrominc_Subsequence {
 
   public int findLPSLengthRecursive(String s) {
     return findLPSLengthRecursiveCall(s, 0, s.length() - 1);
@@ -99,7 +99,7 @@ public class C5_1_Longest_Palindrominc_Subsequence {
   }
 
   public static void main(String[] args) {
-    C5_1_Longest_Palindrominc_Subsequence lps = new C5_1_Longest_Palindrominc_Subsequence();
+    C5_Longest_Palindrominc_Subsequence lps = new C5_Longest_Palindrominc_Subsequence();
     System.out.println(lps.findLPSLengthBottomUp("abdbca"));
     System.out.println(lps.findLPSLengthRecursive("abdbca"));
     System.out.println(lps.findLPSLengthTopDown("abdbca"));

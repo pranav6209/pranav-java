@@ -11,7 +11,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  * 
  *
  */
-public class C5_2_Longest_Palindromic_Substring {
+public class E1_Longest_Palindromic_Substring {
   
   public int findLonegesPalindromicSubstring(String s) {
     return findLongestCommonSubstring(s,new StringBuilder(s).reverse().toString());
@@ -55,7 +55,7 @@ public class C5_2_Longest_Palindromic_Substring {
   }
 
   public static void main(String[] args) {
-    C5_2_Longest_Palindromic_Substring lcs = new C5_2_Longest_Palindromic_Substring();
+    E1_Longest_Palindromic_Substring lcs = new E1_Longest_Palindromic_Substring();
     System.out.println(lcs.findLonegesPalindromicSubstring("abdbca"));
     System.out.println(lcs.findLonegesPalindromicSubstring("cdpdd"));
     System.out.println(lcs.findLonegesPalindromicSubstring("pqr"));

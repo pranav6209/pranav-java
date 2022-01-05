@@ -28,7 +28,7 @@ public class C1_Climbing_N_Stairs {
     if (n == 2)
       return 2;
     
- // We can reach 0 by only starting there. Thus, s(0) = 1
+    // We can reach 0 by only starting there. Thus, s(0) = 1
     dp[0] = 1;
    
     // base case

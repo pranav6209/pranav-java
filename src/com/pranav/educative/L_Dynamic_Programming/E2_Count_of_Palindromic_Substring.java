@@ -11,7 +11,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  * 
  *
  */
-public class C5_3_Count_of_Palindromic_Substring {
+public class E2_Count_of_Palindromic_Substring {
 
   public int findCPS(String st) {
     // dp[i][j] will be 'true' if the string from index 'i' to index 'j' is a
@@ -41,7 +41,7 @@ public class C5_3_Count_of_Palindromic_Substring {
   }
 
   public static void main(String[] args) {
-    C5_3_Count_of_Palindromic_Substring cps = new C5_3_Count_of_Palindromic_Substring();
+    E2_Count_of_Palindromic_Substring cps = new E2_Count_of_Palindromic_Substring();
     System.out.println(cps.findCPS("abdbca"));
     System.out.println(cps.findCPS("cdpdd"));
     System.out.println(cps.findCPS("pqr"));

@@ -18,7 +18,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  *   
  
  */
-public class C3_2_Minimum_Deletions_Insertions_Transform_String_into_another {
+public class C4_Minimum_Deletions_Insertions_Transform_String_into_another {
 
   private void findMinDeleteInsert(String s1, String s2) {
     System.out.println("Minimum deletions needed: " + (s1.length() - findLCSLengthBottomUp(s1,s2)));
@@ -56,7 +56,7 @@ public class C3_2_Minimum_Deletions_Insertions_Transform_String_into_another {
   
 
   public static void main(String[] args) {
-    C3_2_Minimum_Deletions_Insertions_Transform_String_into_another scs = new C3_2_Minimum_Deletions_Insertions_Transform_String_into_another();
+    C4_Minimum_Deletions_Insertions_Transform_String_into_another scs = new C4_Minimum_Deletions_Insertions_Transform_String_into_another();
     scs.findMinDeleteInsert("abc", "fbc");
 
   }

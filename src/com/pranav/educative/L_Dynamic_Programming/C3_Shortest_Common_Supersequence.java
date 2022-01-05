@@ -15,7 +15,7 @@ package com.pranav.educative.L_Dynamic_Programming;
  *   
  *   so, length of string S1+ length of string S2 - lcs = (4+4-3)
  */
-public class C3_1_Shortest_Common_Supersequence {
+public class C3_Shortest_Common_Supersequence {
 
   private int findShoertestCommonsSupersequence2(String s1, String s2) {
     return s1.length() + s2.length() - findLCSLengthBottomUp(s1, s2);
@@ -111,7 +111,7 @@ public class C3_1_Shortest_Common_Supersequence {
   }
 
   public static void main(String[] args) {
-    C3_1_Shortest_Common_Supersequence scs = new C3_1_Shortest_Common_Supersequence();
+    C3_Shortest_Common_Supersequence scs = new C3_Shortest_Common_Supersequence();
     //System.out.println(scs.findShoertestCommonsSupersequence2("abdca", "cbda"));
     // System.out.println(scs.findShoertestCommonsSupersequence2("abac", "cab"));
     System.out.println(scs.findShoertestCommonsSupersequence2("abcf", "bdcf"));
