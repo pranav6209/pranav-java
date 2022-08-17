@@ -93,21 +93,13 @@ public class A1_Count_Connected_Components_In_Undirected_Graph {
   public static void main(String[] args) {
     List<List<Integer>> ip = new ArrayList<>();
 
-    List<Integer> l1 = new ArrayList<>();
-    l1.add(0);
-    l1.add(1);
+    List<Integer> l1 = new ArrayList<>(Arrays.asList(0,5));
     ip.add(l1);
-    List<Integer> l2 = new ArrayList<>();
-    l2.add(1);
-    l2.add(2);
+    List<Integer> l2 = new ArrayList<>(Arrays.asList(1,2));
     ip.add(l2);
-    List<Integer> l3 = new ArrayList<>();
-    l3.add(0);
-    l3.add(2);
+    List<Integer> l3 = new ArrayList<>(Arrays.asList(0,2));
     ip.add(l3);
-    List<Integer> l4 = new ArrayList<>();
-    l4.add(3);
-    l4.add(4);
+    List<Integer> l4 = new ArrayList<>(Arrays.asList(3,4));
     ip.add(l4);
 
     System.out.println(number_of_connected_components(5, ip));

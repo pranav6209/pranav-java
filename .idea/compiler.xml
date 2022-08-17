@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/com/pranav/lc/arrayString/Y_Leftmost_Column_with_at_Least_One.java" />
+      <file url="file://$PROJECT_DIR$/src/com/pranav/code/M_Tree_DFs.java" />
+      <file url="file://$PROJECT_DIR$/src/com/pranav/educative/H_Depth_First_Search/A2_All_Paths_For_Sum.java" />
+    </excludeFromCompile>
+  </component>
+</project>

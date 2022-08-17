@@ -15,7 +15,13 @@ import java.util.Set;
  * Time and Space complexity in book.
  * 
  * https://leetcode.com/problems/permutations-ii/
- * 
+ *
+ * brute force way is, when each leaf level worker adds it to a result,
+ * check whether that solutions exist or not and if not add it to res.
+ * for res do not store in arrayList bse searching in arraylist is O(N)
+ * operation while in hashMap it is a constant time operation downside is we are generating whole tree.
+ *
+ *
  */
 public class A4_C4_Permute_Array_Of_Duplicate_Integer {
 

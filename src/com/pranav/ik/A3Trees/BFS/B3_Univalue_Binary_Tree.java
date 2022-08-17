@@ -13,7 +13,8 @@ import com.pranav.ik.A3Trees.BFS.B2_Maximum_Level_Sum_Of_Binary_Tree.TreeNode;
  *
  */
 
-// Get the node val and compare it with all the node. as soon find difference return false end of the loop return true
+// Get the node val and compare it with all the node.
+// as soon find difference return false and end of the loop return true
 
 public class B3_Univalue_Binary_Tree {
 
@@ -48,14 +49,14 @@ public class B3_Univalue_Binary_Tree {
     int uniValue = root.val;
     
     while (!queue.isEmpty()) {
-      TreeNode curretNode = queue.poll();
-      if (curretNode.val != uniValue)
+      TreeNode currentNode = queue.poll();
+      if (currentNode.val != uniValue)
         return false;
-      if (curretNode.left != null)
-        queue.offer(curretNode.left);
+      if (currentNode.left != null)
+        queue.offer(currentNode.left);
 
-      if (curretNode.right != null)
-        queue.offer(curretNode.right);
+      if (currentNode.right != null)
+        queue.offer(currentNode.right);
     }
     return true;
   }

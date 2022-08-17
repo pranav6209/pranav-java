@@ -12,7 +12,8 @@ import java.util.List;
  * 
  * 
  *         https://leetcode.com/problems/3sum/
- * 
+ *
+ *         if approach - presorting and
  *            time : sorting O(N logN ) -- searching for each no input array(for and nest while so o(N^2))that will be O(N^2) = O(N^2+logn)
  *            space : O(N) required for sorting 
  *         
@@ -24,19 +25,19 @@ public class A5_Triplet_Sum_Zero {
 
     List<List<Integer>> triplets = new ArrayList<>();
 
-    Arrays.sort(arr);
+    Arrays.sort(arr); // O(NlogN)
 
     
     // here we can do arr.lenght-2 but not necessary
     for (int i = 0; i < arr.length; i++) {
 
       
-      int currrentNum = arr[i];
+      int currentNum = arr[i];
       
       // we x+y+z = 0 so we are looking for x+y = -z 
-      int target = -arr[i];
+      int target = -currentNum;
 
-      // skip same element to avoid duplicate triplets
+      // since we might have dups in the array, skip same element to avoid duplicate triplets in the answer
       if (i > 0 && arr[i] == arr[i - 1])
         continue;
 
@@ -51,14 +52,16 @@ public class A5_Triplet_Sum_Zero {
 
         // found matching pair
         if (target == arr[left] + arr[right]) {
-          triplets.add(Arrays.asList(currrentNum, arr[left], arr[right]));
+          triplets.add(Arrays.asList(currentNum, arr[left], arr[right]));
           left++;
           right--;
-          // continue skipping, left == left-1 ( current and a previous )
+
+          // optimization in code
+          // continue skipping, for dups. left == left-1 ( current and a previous )
           while (left < right && arr[left] == arr[left - 1])
             left++;
           
-          // make sure here right == right +1 ( current and a previous )
+          // continue skipping, for dups.right == right +1 ( current and a next )
           while (left < right && arr[right] == arr[right + 1])
             right--;
           

@@ -34,8 +34,7 @@ public class B3_T2_Well_Formed_Brackets {
   private static void helper(int leftRemain, int rightRemain, List<Character> slate, List<String> res) {
 
     // if left count is more than right we do not have enough closing bracket to
-    // match
-    // with open bracket.
+    // match with open bracket.
     if (leftRemain > rightRemain) {
       return;
     }

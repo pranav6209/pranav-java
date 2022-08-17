@@ -12,7 +12,7 @@ import java.util.Queue;
  * @author pranavpatel
  *
  */
-public class M_Tree_BFS {
+public class  M_Tree_BFS {
   class TreeNode {
     public int label;
     public TreeNode left_ptr;

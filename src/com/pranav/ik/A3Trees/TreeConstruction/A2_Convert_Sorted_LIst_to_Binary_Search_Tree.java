@@ -8,7 +8,7 @@ package com.pranav.ik.A3Trees.TreeConstruction;
  * 
  *         Tree series -5 5:00:00
  * 
- *         https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+ *         https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
  * 
  *         Time : T(N/2) for 2 recursive calls and O(N) for linkedList O(log n) like a merge sort
  * 
@@ -65,6 +65,7 @@ public class A2_Convert_Sorted_LIst_to_Binary_Search_Tree {
 
   private TreeNode dfs(ListNode head) {
 
+    // linkedList is empty
     if (head == null)
       return null;
 
@@ -92,10 +93,13 @@ public class A2_Convert_Sorted_LIst_to_Binary_Search_Tree {
 
     }
 
+    // slow will be at mid so that will be new root.
+    // run dfs on left half by passing head again
+    // run DFS on right half by passing dfs(slow.next)
     TreeNode root = new TreeNode(slow.val);
 
-    // in case where linked list has only  2 nodes prev hasn't moved further. left subtree will be null.so we do not have to 
-    //work on creating left subtree.
+    // we are chopping the linkedList in two once mid is found. so first half can become left subtree and second half can become
+    // right subtree
     if (prev != null) {
 
       // cut the list in 2 parts so setting prev.next = null

@@ -11,13 +11,6 @@ package com.pranav.ik.A3Trees.DFSBottomUP;
  *         longest path.
  * 
  *         Read the notes from Tree series 2 pdfs
- *         
- *         
- *         
- * 
- * 
- * 
- *
  */
 
 // bottom up DFS
@@ -66,7 +59,7 @@ public class F2_Diameter_Binary_Tree {
 
       int leftTreeHeight = helper(root.left, res);
       myHeight = 1 + leftTreeHeight;
-      myDia = 1 + leftTreeHeight;
+      myDia = 1 + leftTreeHeight; // = myHeight
 
     }
 

@@ -9,17 +9,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
+ * https://leetcode.com/problems/two-sum/submissions/
  * here if we have to return a boolean we can sort the array and use similar
- * approach of class problem-1 time complexity : O(nlog n) + O(n) - O(nlog n) for
- * sorting and O(n) - for single two pointete one pass space : O(1)
+ * approach of class problem-1
+ * time complexity : O(nlog n) + O(n)
+ *                   O(nlog n) for sorting and O(n) - for single two pointer one pass
+ * space : O(1)
  * 
- * since we are returning indices, we can no use that approach. use hashmap that
- * requires additional space
+ * since we are returning indices, we can not use that approach else we ll loose the tack of indices.
+ * use hashmap that requires additional space
  * 
- * time : O(N) space : O(N)
- * 
- * 
+ * time : O(N)
+ * space : O(N)
+ *
  * if additional space is not permitted and pre sorting is not 
  * allowed then use brute force approach
  * 
@@ -32,13 +34,13 @@ public class A1_C2_2_Sum_In_An_Array {
 
     List<Integer> res = new ArrayList<Integer>();
 
-    // map of the number and indecice
+    // map of the number and indices
     Map<Integer, Integer> map = new HashMap<>();
 
     for (int i = 0; i < numbers.size(); i++) {
 
       int complement = target - numbers.get(i);
-
+      // search for a complement in map. if found return it else put current element in a map
       if (map.containsKey(complement)) {
 
         res.add(map.get(complement));
@@ -77,5 +79,15 @@ public class A1_C2_2_Sum_In_An_Array {
     res.add(-1);
     return res;
 
+  }
+
+  public static void main(String[] args) {
+    List<Integer> input = new ArrayList<>();
+    input.add(2);
+    input.add(7);
+    input.add(11);
+    input.add(15);
+
+    System.out.println(two_sum(input,17));
   }
 }

@@ -13,17 +13,15 @@ import java.util.Map;
  *
  *
  *         Top down tree construction template
- * 
+ *
  *         1. Figure out and create a root node 2. Recursively construct the
  *         left subtree 3. Recursively construct the right subtree
- * 
- *         1. here root node will be always preorder array beginning so we ll
+ *
+ *         1. here root node will be always postorder array last value so we ll
  *         construct a root from that 2. then we ll find the rootindex in
- *         hashmap, this will help us to break preorder array.purspose of
+ *         hashmap, this will help us to break inorder array.purspose of
  *         breaking an array is to determine what goes into left array and what
- *         in right.Needed for recursively constructing the tree 3.Dry run in
- *         tree series 5 1:52:00 also dia in note
- * 
+ *         in right.Needed for recursively constructing the tree
  * 
  *         Time : O(N) each worker is doing constant amt work for n node it will
  *         O(N) space : O(heightOfTree) O(N)

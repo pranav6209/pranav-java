@@ -13,7 +13,7 @@ package com.pranav.educative.B_twopointer;
  * 
  * time : O(N)
  * space : O(n) considering o/p array
- *
+ * do it from IK
  */
 public class A4_Squaring_Sorted_Array {
 

@@ -16,8 +16,8 @@ import java.util.Set;
  *  https://leetcode.com/problems/top-k-frequent-elements/
  * 
  *  After each iteration 
-    1. pivot index will take the correct and place 
-    2. element left side of the pivots are smaller than pivot and elements bigger than pivot are on right hand side 
+    1. pivot index will take the correct place
+    2. element left side of the pivots are smaller than pivot and elements bigger than pivot are on right  side.
       but it will be in unsorted manner 
       
       Here in this problem,our goal is to sort an array based on the frequency of an input array and index of interest is k
@@ -67,7 +67,6 @@ public class A9_C5_Top_K_Frequent_Element {
     return res;
   }
 
-  
   // sort an input list based on frequency, here higher frequency numbers are at the front. Technically we are reverse sorting.
   private static void helper(ArrayList<Integer> list, int start, int end, int index, Map<Integer, Integer> map) {
 

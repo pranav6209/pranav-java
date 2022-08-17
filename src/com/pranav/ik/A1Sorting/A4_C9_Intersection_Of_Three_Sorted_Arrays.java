@@ -15,7 +15,8 @@ import java.util.List;
  * 1. input array is sorted ?
  * 2. what to return if there is no intersection 
  * 
- * what is array is not sorted ? go for hashMap approach. look live class notes 
+ * what is array is not sorted ? go for hashMap approach. add one array to hash table and iterate over other and then search in hashmap
+ * smaller array in hashmap to save space.(live class note)
  * 
  * what if one array is very small compare to other(assuming sorted array) iterate 
  * over a small array and  find element using binary search in a big array 

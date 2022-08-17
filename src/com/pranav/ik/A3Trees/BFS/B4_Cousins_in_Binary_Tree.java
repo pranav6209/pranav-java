@@ -44,9 +44,12 @@ public class B4_Cousins_in_Binary_Tree {
 
     while (!queue.isEmpty()) {
 
-      // we are checking parentx and parenty at each level. if any one of them is set at particular level we ll 
-      // unwind the changes and check again
-      
+      // we are checking parentx and parenty at each level (as checking at each level,
+      // we do not have to worry abt maintaining depth.).
+      // if any one of them is set at particular level we ll unwind the changes and check again
+
+
+      // at each level, parentX and ParentY starts with null
       TreeNode parentx = null;
       TreeNode parenty = null;
       

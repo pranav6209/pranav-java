@@ -22,7 +22,7 @@ public class A5_Subsets_with_Dups {
 
   static List<List<Integer>> allSubsets(List<Integer> input) {
 
-    // always sort the input if is is not. so we have dups next to each other
+    // always sort the input if is not. so we have dups next to each other
     Collections.sort(input);
 
     List<Integer> slate = new ArrayList<>();

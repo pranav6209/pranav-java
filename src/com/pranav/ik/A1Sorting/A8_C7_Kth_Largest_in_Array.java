@@ -8,15 +8,17 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author pranavpatel
- *  After each iteration 
-    1. pivot index will take the correct and place 
-    2. element left side of the pivots are smaller than pivot and elements bigger than pivot are on right hand side 
-      but it will be in unsorted manner 
+ *
  * https://leetcode.com/problems/kth-largest-element-in-an-array/
- * 
- * time :O(N) -- as only we are doing partial array not the full array
- * space : O(1)
+ *
+ * Quick select -- variation of a quick sort. where we only recurse on the one side based on our intresr index is known as a quick select
+ *
+ * @author pranavpatel
+ *  After each iteration
+ *  1. pivot index will take the correct place
+ *  2. element left side of the pivots are smaller than pivot and elements bigger than pivot are on right side. But it will be in unsorted manner
+ *  time :O(N) -- as only we are doing partial array not the full array
+ *  space : O(1)
  *
  */
 public class A8_C7_Kth_Largest_in_Array {
@@ -28,7 +30,7 @@ public class A8_C7_Kth_Largest_in_Array {
 
     int n = numbers.size();
     helper(numbers, 0, n - 1, n - k);
-    return (numbers.get(n - k));
+    return (numbers.get(n - k)); // return number at the pivot index
   }
 
   private static void helper(List<Integer> arr, int start, int end, int index) {
@@ -38,6 +40,8 @@ public class A8_C7_Kth_Largest_in_Array {
       return;
 
     // https://www.baeldung.com/java-generating-random-numbers-in-range
+    // end - start + 1 is length of an array and start is beginning of an array.
+    // generate number between it
 
     Random rand = new Random();
     int pivot_index = rand.nextInt(end - start + 1) + start;
@@ -69,7 +73,7 @@ public class A8_C7_Kth_Largest_in_Array {
     // found the index of interest at orange
     if (index == orange)
       return;
-    // if index of interest is less than orange, quick sort left array and ignore right 
+    // if index of interest is less than orange, quick sort left array and ignore right. so here we are saving time to iterate on other side
     if (index < orange) {
       helper(arr, start, orange - 1, index);
     }

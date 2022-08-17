@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author pranavpatel
  * 
- *         time : input O(N) + call space
+ *         time : input O(N) + call space (which is height of a tree ?)
  *         
  *         In top-down DFS, as information was passed top-down from parent to child, that
            information was packaged inside the arguments of the dfs function(slate,sumSlate) - partial
@@ -36,7 +36,7 @@ public class D1_Print_All_Paths_Of_Tree {
     return res;
   }
 
-  // TreeNode root is subproblem definition
+  // TreeNode root is sub problem definition
   // slate is Partial solution
   // for any arbitrary worker
   private static void dfs(TreeNode node, List<Integer> slate, List<List<Integer>> res) {

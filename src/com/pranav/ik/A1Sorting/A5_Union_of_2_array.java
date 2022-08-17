@@ -9,7 +9,16 @@ import java.util.List;
 /**
  * @author pranavpatel
  * 
- *         code in live class note
+ * code in live class note
+ *
+ * Merge vs Union
+ *
+ * for merge, every single number in both the array should go to the output array.
+ * where union is a set. If number is in both array we put only once in res.
+ *
+ * [1,4,7,8]  [2,4,6,7,9]
+ *
+ * [1,2,4,6,7,8,9]
  *
  */
 public class A5_Union_of_2_array {
@@ -39,6 +48,17 @@ public class A5_Union_of_2_array {
         j++;
       }
 
+    }
+
+    // add remaining element from either arr1 or arr2
+    while(i < arr1.get(i) ){
+      res.add(arr1.get(i));
+      i++;
+    }
+
+    while(j < arr2.get(j) ){
+      res.add(arr2.get(j));
+      j++;
     }
 
     return res;

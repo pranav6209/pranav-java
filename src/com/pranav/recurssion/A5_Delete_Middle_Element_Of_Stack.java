@@ -13,7 +13,8 @@ import java.util.Stack;
  *         https://www.youtube.com/watch?v=AZ4jEY_JAVc&list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY&index=6&ab_channel=AdityaVerma
  *
  */
-public class A5_Delete_Middle_Element_Of_Stack {
+public class
+A5_Delete_Middle_Element_Of_Stack {
 
   static void deleteMiddleElement(Stack<Integer> stack, int k) {
 

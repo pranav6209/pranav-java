@@ -23,12 +23,14 @@ public class A2_Number_of_Substrings_Containing_All_Three_Characters {
     for (int right = 0; right < n; right++) {
       System.out.println(s.charAt(right));
       count[s.charAt(right) - 'a']++;
+
+      //increase the left only if we have all 3 chars a,b,c
       while (count[0] > 0 && count[1] > 0 && count[2] > 0) {
         System.out.println(s.charAt(right));
-        count[s.charAt(left) - 'a']--;
+        count[s.charAt(left) - 'a']--; // get the index // remove the count of outgoing element
         left++;
       }
-      // debug continuw to show process. 
+      // debug continue to show process.
 
       for (int k = 0; k < right; k++) {
 

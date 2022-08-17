@@ -32,7 +32,6 @@ public class A9_T1_Possible_To_Achieve_Target_Boolean {
     // sumSlate == target, we want to make sure slate it not empty, we are not
     // considering empty set as a valid answer here
     if (sumSlate == target && !slate.isEmpty()) {
-
       res[0] = true;
       return;
     }

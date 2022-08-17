@@ -45,7 +45,7 @@ public class A6_C6_Words_From_Phone_Number {
 
     // Get all the characters mapped from the following digit at current index
     // phoneNumber.charAt(index) will give a char and if we want int from that subtract 
-    // ASCII of 0. lokk at the code for ASCII
+    // ASCII of 0. look at the code for ASCII
     
     int element = phoneNumber.charAt(index)-'0';
     String str = phNumber[element];

@@ -16,6 +16,8 @@ import java.util.List;
  *         time : sorting O(N logN ) -- searching for each no input array(for and nest while so o(N^2)) that will be O(N^2) = O(N^2+logn)
  *         
  *         space : O(N) required for sorting
+ *
+ *
  * 
  *
  */
@@ -25,9 +27,12 @@ public class A6_Triplet_Sum_Closest {
   // space O(1)
   public static int threeSumClosest(int[] num, int target) {
     Arrays.sort(num);
+
+    // goal here is to return sum and not a difference.
     int res = 0;
     int minimunDiff = Integer.MAX_VALUE;
 
+    // this O(N^2)
     for (int i = 0; i < num.length; i++) {
       
       int left = i + 1;

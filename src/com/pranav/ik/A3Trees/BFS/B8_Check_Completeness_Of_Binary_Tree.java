@@ -47,8 +47,8 @@ public class B8_Check_Completeness_Of_Binary_Tree {
    2. if tree is complete, index for each node that we are polling from queue should increase sequentially. 
       failure in that means not a complete binary tree  
       
-      if (expextedId == currentNode.index)
-          expextedId += 1;
+      if (expectedId == currentNode.index)
+          expectedId += 1;
    */
   public boolean isCompleteTree(TreeNode root) {
 
@@ -59,7 +59,7 @@ public class B8_Check_Completeness_Of_Binary_Tree {
 
     queue.offer(new QueueNode(root, 1));
 
-    int expextedId = 1;
+    int expectedId = 1;
 
     while (!queue.isEmpty()) {
 
@@ -69,8 +69,8 @@ public class B8_Check_Completeness_Of_Binary_Tree {
 
         QueueNode currentNode = queue.poll();
 
-        if (expextedId == currentNode.index)
-          expextedId += 1;
+        if (expectedId == currentNode.index)
+          expectedId += 1;
         else
           return false;
 

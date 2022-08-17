@@ -28,7 +28,8 @@ public class A1_Longest_Continuous_Subarray_With_Absolute_Diff_Less_Than_or_Equa
   public static int longestSubarray(int[] A, int limit) {
     
     // double ended queue
-    
+
+    // maintain 2 queue, one which maintain max elements and one which maintain min elements
     Deque<Integer> maxd = new ArrayDeque<>();
     Deque<Integer> mind = new ArrayDeque<>();
     
@@ -36,7 +37,8 @@ public class A1_Longest_Continuous_Subarray_With_Absolute_Diff_Less_Than_or_Equa
 
     for (right = 0; right < A.length; right++) {
 
-      // update maxDeque with new right pointer
+      // if right pointer value is greater than maxd.peekLast() values remove all the smaller values and
+      // update right pointer value
 
       while (!maxd.isEmpty() && A[right] > maxd.peekLast())
         maxd.pollLast();

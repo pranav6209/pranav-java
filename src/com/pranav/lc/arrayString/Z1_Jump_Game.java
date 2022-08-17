@@ -27,6 +27,7 @@ public class Z1_Jump_Game {
   public static void main(String[] args) {
 
     int[] nums = { 2, 3, 1, 0, 4 };
+
     System.out.println(canJump(nums));
   }
 }

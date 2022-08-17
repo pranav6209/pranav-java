@@ -30,7 +30,6 @@ public class B2_P4_Dutch_National_Flag {
   
   // do one dry run to understand the code
   static ArrayList<Character> dutch_flag_sort(ArrayList<Character> balls) {
-    // Write your code here.
 
     int low = 0;
     int high = balls.size() - 1;

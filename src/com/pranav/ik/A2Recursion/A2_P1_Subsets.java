@@ -8,7 +8,8 @@ import java.util.List;
 
 /**
  * @author pranavpatel
- * 
+ *  IK version
+ *  look at the second problem first -- this is a problem where input is char other one had an input of integer
  * space and time complexity in the book
  * 
  * https://leetcode.com/problems/subsets/
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class A2_P1_Subsets {
 
-  // alternatively we can define res as a global variable and then we do not have to pass around.
+  // alternatively we can define res as a global variable then we do not have to pass around.
   // see the example in letter case permutation
   static String[] generate_all_subsets(String s) {
 

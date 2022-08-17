@@ -23,18 +23,20 @@ public class B3_C6_Kth_Largest_In_Stream {
 
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 
-    // add initial stream in to heap
+    // add initial stream into heap
     for (int i = 0; i < initial_stream.size(); i++) {
 
       minHeap.add(initial_stream.get(i));
     }
 
-    // add append strem to heap
+    // add append_stream to heap
     for (int j = 0; j < append_stream.size(); j++) {
 
       minHeap.add(append_stream.get(j));
 
-      // if heap is greater than k remove elements
+      // if heap is greater than k remove elements.
+      // needs while here as with initial_stream we might have added lots of
+      // elements so, we have to remove all the elements will we reach the limit of k
       while (minHeap.size() > k) {
         minHeap.poll();
       }

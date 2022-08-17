@@ -10,17 +10,45 @@ import java.util.List;
  * @author pranavpatel
  * 
  *  Omkar supplement class also similar problem in Test set 1
- *  consider here all number are positive 
- * 
- * 
- *  
- *   
+ *  consider here all number are positive
+ *
  * count number of subset that sum to k instead of array add a counter
  *  
  * we can have a counter in backtracking case and can just return a counter 
  * instead of adding it to arrayList
- * 
+ *
+ *
+ * Given an integer array, generate all the unique combinations of the array numbers that sum up to a given target value.
+ *
+ * {
+ * "arr": [1, 2, 3],
+ * "target": 3
+ * }
+ *
+ * Output:
+ *
+ * [
+ * [3],
+ * [1, 2]
+ * ]
+ *
+ *
+ * {
+ * "arr": [1, 1, 1, 1],
+ * "target": 2
+ * }
+ *
+ * Output:
+ *
+ * [
+ * [1, 1]
+ * ]
+ *
+ *
  * Possible to achieve a target sum is similar problem in test
+ *
+ *
+ *
  *
  */
 

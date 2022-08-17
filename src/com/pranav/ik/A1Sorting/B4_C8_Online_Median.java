@@ -44,7 +44,7 @@ public class B4_C8_Online_Median {
     for (int i = 0; i < stream.size(); i++) {
       int num = stream.get(i);
 
-      // if num coming is more than median it belongs to max heap. imagine sorted
+      // if num coming is more than median it belongs to min heap. imagine sorted
       // array where median lies in center and maxHeap
       // on left and minHeap on right
       if (num > median) {

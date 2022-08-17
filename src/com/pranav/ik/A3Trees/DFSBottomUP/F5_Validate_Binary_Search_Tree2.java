@@ -12,25 +12,21 @@ package com.pranav.ik.A3Trees.DFSBottomUP;
  * 
  *         This is a decision problem.
  * 
- *         Global problem is determine if the tree is BST
+ *         Global problem is determined if the tree is BST
  * 
  *         local problem, sub tree rooted at each node is a BST
  * 
  *         Local -> Global all local problem must return true for global
  *         solution to be true so if any local solution is false global will
  *         become false
+ *
+ *         Read through Leetcode solution approach - 1
  * 
- * 
- *         Node will determine if it is a BST by looking at its left and right
- *         subtrees The largest value in left subtree should be smaller than the
- *         root value. The smallest value on the right subtree should be larget
- *         than the root value. Both subtrees should be BST so each node should
- *         return (smalles,largest,isBST) value in its subtree back to its
- *         parent
+ *
  *
  */
 
-// bottom down dfs.
+// top down dfs.
 public class F5_Validate_Binary_Search_Tree2 {
 
   private static class TreeNode {
@@ -53,6 +49,7 @@ public class F5_Validate_Binary_Search_Tree2 {
 
   
   static void dfs(TreeNode node, boolean[] globalResult, int minVal, int maxVal) {
+
 
     if (node.val >= maxVal || node.val <= minVal) {
       globalResult[0] = false;

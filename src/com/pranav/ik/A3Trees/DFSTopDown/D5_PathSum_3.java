@@ -35,7 +35,12 @@ public class D5_PathSum_3 {
     slate.add(node.val);
 
     // here in slate, starting from slate.size()-1 and then going till size 0 to check if targetSum exists.
-    // basically, We want to count no of path that ends at this node 
+    // basically, We want to count no of path that ends at this node
+
+    // based on leetcode example -1, we are traversing 10 -> 5 -> 3 . when we are @ 3,we want to calculate
+    // (3 + 5) 8. That can only be done when we are 3 and counting upward. if we keep adding next element we
+    // go into sumslate (10 + 5 + 3)  that logic will not make sense here as we ll never be evaluate 8 easily.
+
     // explanation 3:43:00 Tree Series 2
     
     int suffixSum = 0;

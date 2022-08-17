@@ -57,7 +57,7 @@ public class B6_Add_one_row_to_tree {
       for (int i = 0; i < levelSize; i++) {
 
         TreeNode currentNode = queue.poll();
-        // if depth 2 is given, ultimately we want to add new row at level 1
+        // if depth = 2 is given, ultimately we want to add new row at level 1
         // optimization will be once the level is added, we can stop no need to add more
         // node to queue
         if (treeDepth == depth - 1) {

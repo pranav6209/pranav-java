@@ -63,6 +63,7 @@ public class D7_Boundry_Of_Binary_Tree {
   // we ll try to go left first and if left is not available, we ll go right
   private List<Integer> getLeftBoundry(TreeNode node) {
 
+    // since it is not a recursion call, we do not need to keep passing the leftBoundry
     List<Integer> leftBoundry = new ArrayList<>();
 
     // handle root separately add that during a left walk
@@ -93,6 +94,7 @@ public class D7_Boundry_Of_Binary_Tree {
 
   private List<Integer> getRightBoundry(TreeNode node) {
 
+    // root is already added so no need to add it here
     List<Integer> rightBoundry = new ArrayList<>();
 
     if (node.right != null) {

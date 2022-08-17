@@ -35,8 +35,8 @@ public class B2_Maximum_Level_Sum_Of_Binary_Tree {
   }
 
   /*
-   * 1. at each level keep track of the sum 
-   * 2.sum at that level increases the max
+   * 1. At each level keep track of the sum
+   * 2.sum at that level greater than the max
    * sum, update the max sum and update the level where found
    */
   public int maxLevelSum(TreeNode root) {

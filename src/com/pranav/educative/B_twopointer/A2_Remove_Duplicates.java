@@ -21,25 +21,25 @@ public class A2_Remove_Duplicates {
     if (arr == null || arr.length == 0)
       return 0;
 
-    int i = 0;
-    for (int j = 1; j < arr.length; j++) {
+    int slow = 0;
+    for (int fast = 1; fast < arr.length; fast++) {
 
-      int value1 = arr[i];
-      int value2 = arr[j];
+      int value1 = arr[slow];
+      int value2 = arr[fast];
 
-      // goal here is to move non duplicate number to front and doen't matter what we
-      // left behind
-      // so no need to swap i and j just. just assign value of j to i.
-      // we have to do it when both values are different
+//      goal here is to move non-duplicate number to front and doesn't matter what we left behind
+//      so no need to swap i and j just. just assign value of j to i.in case we have to return array we need to swap
+//       we have to do it when both values are different
+
       if (value1 != value2) {
         // make sure to first increment and then assign the value
-        i++;
-        arr[i] = arr[j];
+        slow++;
+        arr[slow] = arr[fast];
 
       }
     }
 
-    return i + 1;
+    return slow + 1;
   }
 
   public static void main(String[] args) {

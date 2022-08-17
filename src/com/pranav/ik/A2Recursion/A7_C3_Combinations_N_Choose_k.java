@@ -11,7 +11,7 @@ import java.util.List;
  * 
  * 
  *         This is a same problem as a subset problem. Only difference is we are
- *         adding a backtrack case
+ *         adding backtrack case
  * 
  *         https://leetcode.com/problems/combinations/
  * 

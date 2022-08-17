@@ -96,8 +96,8 @@ public class A1_Knapsack {
   
 
   // DP Solution // bottom up
-  // as we have see n and w are only changing so we have to make table for those
 
+  // for matrix look at the educative solution just have dp[n+1][c+1] instead of dp[n][c+1]
   // value at a specific grid is a sub-optimal solution.means if we look at value
   // at capacity 3 index 2
   // which is 11, that is the optimal answer(max answer) in the case problem is

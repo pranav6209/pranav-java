@@ -8,7 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 
+ * look at the second problem first -- this is a problem where input is char other one had an input of integer
+ *
  * Time Complexity: O(2^n * n).
  * As we will generate 2^n strings of length O(n).
  * Auxiliary Space Used:
@@ -16,7 +17,7 @@ import java.util.List;
  * As we will store 2^n strings of length O(n) in the output array to be returned.
  * 
  * @author pranavpatel
- * look at the second problem first
+ *
  *
  */
 public class A5_C5_Subsets_with_Dups {

@@ -4,28 +4,29 @@
 package com.pranav.ik.A2Recursion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author pranavpatel
- * 
- * https://leetcode.com/problems/subsets-ii/
+ * leetcode version
+ * https://leetcode.com/problems/subsets/
  *
  */
 public class A2_Subsets {
 
-  static List<List<Integer>> allSubsets(List<Integer> input) {
-
+  static List<List<Integer>> allSubsets(int[] nums) {
+    Arrays.sort(nums);
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> slate = new ArrayList<>(); 
-    helper(input, 0, slate, res);
+    helper(nums, 0, slate, res);
     return res;
   }
 
-  private static void helper(List<Integer> input, int index, List<Integer> slate, List<List<Integer>> res) {
+  private static void helper(int[] input, int index, List<Integer> slate, List<List<Integer>> res) {
 
 
-    if (index == input.size()) {
+    if (index == input.length) {
       // every recursive call is modifying list so if we do not make a copy, we ll end up with empty sets
       res.add(new ArrayList<>(slate));
       return;
@@ -33,7 +34,7 @@ public class A2_Subsets {
     }
 
     // inclusion
-    int element = input.get(index);
+    int element = input[index];
     slate.add(element); // here we are modifying global slate
     helper(input, index + 1, slate, res);
     // undo modification to global slate
@@ -45,12 +46,14 @@ public class A2_Subsets {
   
   public static void main(String[] args) {
     
-    List<Integer> input = new ArrayList<>();
-    input.add(1);
-    input.add(2);
-    input.add(3);
+    int[] nums = new int[3];
+
+    nums[0] = 1;
+    nums[1] = 2;
+    nums[2] = 3;
+
     
-    System.out.println(allSubsets(input));
+    System.out.println(allSubsets(nums));
     
     
   }

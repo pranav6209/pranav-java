@@ -33,22 +33,22 @@ public class E2_Clone_Tree {
 
     TreeNode root2 = new TreeNode(root.val);
 
-    return dfs(root, root2);
+     dfs(root, root2);
+
+     return root2;
 
   }
 
-  private static TreeNode dfs(TreeNode node1, TreeNode node2) {
+  private static void dfs(TreeNode node1, TreeNode node2) {
 
     if (node1.left != null) {
       node2.left = new TreeNode(node1.left.val);
-      dfs(node1, node2);
+      dfs(node1.left, node2.left);
     }
 
     if (node1.right != null) {
       node2.right = new TreeNode(node1.right.val);
-      dfs(node1, node2);
+      dfs(node1.right, node2.right);
     }
-
-    return node2;
   }
 }

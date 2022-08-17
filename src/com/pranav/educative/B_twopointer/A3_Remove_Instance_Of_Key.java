@@ -21,26 +21,26 @@ public class A3_Remove_Instance_Of_Key {
     if (nums == null || nums.length == 0)
       return 0;
 
-    int i = 0;
+    int slow = 0;
 
-    for (int j = 0; j < nums.length; j++) {
+    for (int fast = 0; fast < nums.length; fast++) {
 
-      // goal here is to move all un removed number to front and doen't matter what we
+      // goal here is to move all number that are staying to front and doesn't matter what we
       // left behind
       // so no need to swap i and j just. just assign value of j to i.
 
       // if array value is not equal to value to be removed add it to an array
-      if (nums[j] != key) {
+      if (nums[fast] != key) {
         // put value of unmatched element into new index in
         // existing array and increment slow pointer
-        nums[i] = nums[j];
-        i++;
+        nums[slow] = nums[fast];
+        slow++;
 
       }
 
     }
 
-    return i;
+    return slow;
   }
 
   public static void main(String[] args) {

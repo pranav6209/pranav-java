@@ -14,7 +14,15 @@ import com.pranav.lc.stackQueueHeap.Heap.A_Last_Stone_Weight;
  *         https://www.youtube.com/watch?v=NDpwj0VWz1U
  *         https://leetcode.com/problems/lru-cache/discuss/45922/JAVA-Easy-Version-To-Understand!!!!
  *         
- *         bottom discussion one from above^^
+ *         maintain 2 data structure
+ *
+ *         1. map will give O(1) - read access to key . map will hold key and a reference to node.
+ *         Map<Integer,Node> --- we do not have to explicity maintain/update Node() in a map.
+ *         I think since it is refrecend to node in a linkedList it will be updated automatically.
+ *
+ *         2. to maintain Least recently used logic , Doubly linkedList, head.next will be mosty recently used
+ *         and tail.prev is least recently used. Here we are maintaining head and tail with key, val -->> 0,0
+ *         and then new keys will be added in between
  *
  */
 
@@ -53,11 +61,12 @@ public class A_LRU_Cache {
 
   public int get(int key) {
 
+    //  if key is found return it with updating doubly linkedList else return -1
     int res = -1;
     if (map.containsKey(key)) {
 
       // once node is found in map
-      // remove from the node and add it to the front.
+      // remove  doubly linkedList from its current position and add it to the front.
       Node n = map.get(key);
       remove(n);
       insertToHead(n);
@@ -71,25 +80,26 @@ public class A_LRU_Cache {
 
     if (map.containsKey(key)) {
 
-      // if key exists in map remove it and
-      // add it to the front
+      // if key exists in map remove it from doubly linkedList current position and
+      // add it to the front, update the value. No operation needed for map as it is already there
       Node n = map.get(key);
       remove(n);
       // assign new value to node
       n.value=value;
       insertToHead(n);
-
+      // here in a map node attached to that key will be updated automatically with new value,next,prev as in map
+      // node is referred to a node in a  linkedList
     } else {
 
       if (map.size() == capacity) {
-        // first remove it from the map
+        // first remove tail.prev.key from map
         map.remove(tail.prev.key);
         // remove it from the LinkedList
         remove(tail.prev);
       }
 
       Node n = new Node(key, value);
-      // insert to map and then add it to map
+      // insert to doubly linkedlist at front and then add it to map
       insertToHead(n);
       map.put(key, n);
 
@@ -97,6 +107,7 @@ public class A_LRU_Cache {
 
   }
 
+  // head and tail both are has key,val 0
   private void insertToHead(Node n) {
 
     Node headNext = head.next;
@@ -107,6 +118,7 @@ public class A_LRU_Cache {
 
   }
 
+  // head and tail both are has key,val 0
   private void remove(Node n) {
 
     n.prev.next = n.next;

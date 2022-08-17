@@ -62,6 +62,8 @@ public class D_longest_common_prefix {
 
     String[] strs = { "pra", "pr", "prana" };
 
+
+
     System.out.println(longestCommonPrefix(strs));
   }
 

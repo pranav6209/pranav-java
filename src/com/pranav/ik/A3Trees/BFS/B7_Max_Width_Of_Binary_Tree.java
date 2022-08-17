@@ -9,9 +9,7 @@ import java.util.Queue;
 /**
  * @author pranavpatel
  * 
- *         https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
- *
- *
+ *https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
  *         look at the class note
  * 
  * 
@@ -48,10 +46,14 @@ public class B7_Max_Width_Of_Binary_Tree {
     }
   }
   /*
+
+  read the problem statement to understand how width is being calculated.
+
   1. Store the index of children when adding them to the queue. 
-  2. Store the first node of each level separately outside the "for" loop and 
-     also track the last node at each level through "node".
+  2. Store the firstNode and currentNode of each level separately outside the "for" loop to keep track of width
      At the end their index difference is that level's width.consider we are finding a width of an array
+
+
   */
   public int widthOfBinaryTree(TreeNode root) {
     if (root == null)

@@ -23,7 +23,11 @@ import com.pranav.lc.trees.TreeNode;
  * nodes can be found in queue at max at one time so O(N/2)
  * 
  * For storing the levels of each node: O(node_count).
- 
+
+
+ if we want to do operation within a level - code change is in for loop.
+ if we want to do operation after each level - code change is after for loop. if we want to initialize, after each level,
+ do it after while
  *
  *
  */

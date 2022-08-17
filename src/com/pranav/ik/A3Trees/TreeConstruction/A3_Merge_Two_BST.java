@@ -38,7 +38,7 @@ public class A3_Merge_Two_BST {
     // 2. merge sort two sorted list 
     List<Integer> sortedList = mergeSort(inOrder1, inOrder2);
     
-    // 3. construct a new BST with sorted array like problme 1 
+    // 3. construct a new BST with sorted array like problem 1
     return convertArrToTree(sortedList, 0, sortedList.size() - 1);
   }
 

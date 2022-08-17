@@ -20,6 +20,9 @@ public class A7_P3_Merge_Sorted_Array_Into_Another {
 
     /*
      * start from tail of each list
+     *
+     * [1,3,5]
+     * [2,4,6,0,0,0]
      * 
      */
 

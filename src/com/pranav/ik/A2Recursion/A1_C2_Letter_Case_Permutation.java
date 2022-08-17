@@ -22,10 +22,11 @@ import com.pranav.educative.I_Subsets.A4_String_Permutation_By_Changing_Case;
  */
 public class A1_C2_Letter_Case_Permutation {
 
+  // leetcode expect that we pass res in recursion and do not declare it globally
   static List<String> res = new ArrayList<>();
   public static List<String> letter_case_permutations(String str) {
 
-    // slate if list of char as we are only expecting one char at a time in the list
+    // slate is list of char as we are only expecting one char at a time in the list
     List<Character> slate = new ArrayList<>();
     helper(str, 0, slate);
     return res;
@@ -36,15 +37,16 @@ public class A1_C2_Letter_Case_Permutation {
   // includes leaf node and internal node.
 
   // partial solution = slate = passing to lower roots
-  // sub problem definition = str and idx
+  // sub problem definition = str and idx from worker will start working
+  // each worker will fill up left most blank
   private static void helper(String str, int idx, List<Character> slate) {
 
     // recursion base case
     // leaf node
     
-    // here we are not checking idx == str.lenght -1 as at that point we are still
+    // here we are not checking idx == str.length -1 as at that point we are still
     // working with sub problem definition size 1
-    // when we at idx == str.lenght, our subproblem definition is empty
+    // when we at idx == str.length, our subproblem definition is empty
 
     // here all the blanks are filled at this point 
     if (idx == str.length()) {

@@ -16,7 +16,7 @@ import java.util.List;
  *
  */
 public class A2_C1_2Sum_In_Sorted_Array {
-  // 2-pointer approach
+  // 2-pointer approach with modified binary search
   public static List<Integer> pair_sum_sorted_array(List<Integer> numbers, int target) {
 
     List<Integer> res = new ArrayList<>();
@@ -38,10 +38,10 @@ public class A2_C1_2Sum_In_Sorted_Array {
         return res;
       }
 
-      // if sum is less than targer means we have to keep adding bigger value to sum.
+      // if sum is less than target means we have to keep adding bigger value to sum.
       if (currentSum < target) {
         left++;
-      } else { // if sum is bigger than targer means we have to keep subtracting bigger value
+      } else { // if sum is bigger than target means we have to keep subtracting bigger value
                // from sum.
         right--;
       }
